@@ -2791,3 +2791,143 @@ to{
     color:#050d1f;
 
 }
+/* =========================
+   FINAL NAVBAR FIX
+========================= */
+
+.navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+
+/* Logo */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    flex-shrink:0;
+}
+
+
+.logo > div:last-child{
+    display:flex;
+    flex-direction:column;
+}
+
+
+.logo h2{
+    font-size:20px;
+    margin:0;
+}
+
+
+.logo span{
+    color:#aab5d0;
+    font-size:11px;
+}
+
+
+/* Navigation */
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:35px;
+
+    flex:1;
+
+}
+
+
+.nav-links li{
+
+    list-style:none;
+
+}
+
+
+.nav-links a{
+
+    color:#c7d5ef;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    padding:10px 0;
+
+    transition:.3s;
+
+    position:relative;
+
+}
+
+
+.nav-links a:hover{
+
+    color:#00d9ff;
+
+}
+
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:0;
+
+    height:2px;
+
+    background:#00d9ff;
+
+    transition:.3s;
+
+}
+
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+
+/* Right Buttons */
+
+.nav-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-shrink:0;
+
+}
+
+
+/* Header Glass */
+
+header{
+
+    background:rgba(5,13,31,.75);
+
+    backdrop-filter:blur(18px);
+
+}
