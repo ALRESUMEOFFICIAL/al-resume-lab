@@ -8,11 +8,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>
-AL Resume Lab | AI-Powered Resume & ATS Checker
+AL Resume Lab | AI Resume & ATS Checker
 </title>
 
-<meta name="description"
-content="AI-powered resume builder and ATS checker to create professional ATS-friendly resumes.">
+<meta name="description" content="AI-powered resume builder and ATS checker to create professional ATS-friendly resumes.">
 
 
 <!-- Google Font -->
@@ -33,146 +32,82 @@ content="AI-powered resume builder and ATS checker to create professional ATS-fr
 
 <link rel="stylesheet" href="style.css">
 
-
 </head>
 
 
 <body>
 
 
-<!-- =========================
-LOADER
-========================= -->
+<!-- BACKGROUND -->
 
-<div id="loader">
+<div class="background">
 
-<div class="loader-logo">
+<div class="glow glow-one"></div>
+
+<div class="glow glow-two"></div>
+
+</div>
+
+
+
+<!-- HEADER -->
+
+<header>
+
+<nav class="navbar">
+
+
+<a href="#" class="brand">
+
+
+<div class="brand-logo">
 AL
 </div>
+
+
+<div class="brand-text">
 
 <h2>
 AL Resume Lab
 </h2>
 
 <p>
-Preparing AI Experience...
+AI-Powered Resume & ATS Checker
 </p>
 
 </div>
 
 
-
-
-<!-- =========================
-BACKGROUND
-========================= -->
-
-
-<div class="background-wrapper">
-
-<div class="gradient-one"></div>
-
-<div class="gradient-two"></div>
-
-<div class="grid-overlay"></div>
-
-</div>
-
-
-
-
-<!-- =========================
-HEADER
-========================= -->
-
-
-<header>
-
-<nav class="navbar container">
-
-
-<a href="#" class="logo">
-
-
-<div class="logo-box">
-AL
-</div>
-
-
-<div>
-
-<h2>
-AL Resume Lab
-</h2>
-
-<span>
-AI-Powered Resume & ATS Checker
-</span>
-
-
-</div>
-
-
 </a>
-
 
 
 
 <ul class="nav-links">
 
+<li><a href="#home">Home</a></li>
 
-<li>
-<a href="#home">
-Home
-</a>
-</li>
+<li><a href="#features">Features</a></li>
 
+<li><a href="#process">Process</a></li>
 
-<li>
-<a href="#features">
-Features
-</a>
-</li>
+<li><a href="#pricing">Pricing</a></li>
 
-
-<li>
-<a href="#process">
-How It Works
-</a>
-</li>
-
-
-<li>
-<a href="#pricing">
-Pricing
-</a>
-</li>
-
-
-<li>
-<a href="#faq">
-FAQ
-</a>
-</li>
-
+<li><a href="#faq">FAQ</a></li>
 
 </ul>
 
 
 
+<div class="nav-buttons">
 
-
-<div class="nav-actions">
-
-
-<button class="btn-login">
+<button class="login-btn">
 Login
 </button>
 
 
-<button class="btn-primary">
+<a href="#ats" class="primary-btn">
 Get Started
-</button>
+</a>
 
 
 <button class="menu-btn">
@@ -190,91 +125,41 @@ Get Started
 
 
 
-
-
-<!-- =========================
-MOBILE MENU
-========================= -->
-
+<!-- MOBILE MENU -->
 
 <div class="mobile-menu">
 
+<a href="#home">Home</a>
 
-<ul>
+<a href="#features">Features</a>
 
-<li>
-<a href="#home">
-Home
-</a>
-</li>
+<a href="#process">Process</a>
 
+<a href="#pricing">Pricing</a>
 
-<li>
-<a href="#features">
-Features
-</a>
-</li>
-
-
-<li>
-<a href="#process">
-Process
-</a>
-</li>
-
-
-<li>
-<a href="#pricing">
-Pricing
-</a>
-</li>
-
-
-<li>
-<a href="#faq">
-FAQ
-</a>
-</li>
-
-
-</ul>
-
+<a href="#faq">FAQ</a>
 
 </div>
 
 
 
-
-
-<!-- =========================
-MAIN
-========================= -->
-
-
 <main>
 
 
+<!-- HERO SECTION -->
 
-<!-- =========================
-HERO SECTION
-========================= -->
-
-
-<section id="home" class="hero">
+<section class="hero" id="home">
 
 
-<div class="container hero-wrapper">
+<div class="hero-container">
 
 
 <div class="hero-content">
 
 
-<span class="hero-badge">
-
+<span class="badge">
 🚀 AI Resume Platform
-
 </span>
-
 
 
 <h1>
@@ -286,57 +171,43 @@ ATS-Friendly
 </span>
 
 Resumes With AI
-& Get Hired Faster
 
 </h1>
 
 
-
 <p>
 
-Create professional resumes,
-analyze ATS scores and improve
-your chances with AI-powered
-recommendations.
+Create professional resumes, analyze ATS scores and improve your chances of getting hired with AI-powered recommendations.
 
 </p>
-
 
 
 
 <div class="hero-buttons">
 
 
-<a href="#upload" class="btn-primary">
-
-<i class="ri-upload-cloud-line"></i>
-
+<a href="#ats" class="primary-btn">
 Upload Resume
-
 </a>
 
 
-<a href="#ats" class="btn-secondary">
-
-Try ATS Checker
-
+<a href="#features" class="secondary-btn">
+Explore Features
 </a>
-
 
 
 </div>
 
 
 
-
-<div class="hero-stats">
+<div class="stats">
 
 
 <div>
 
-<h2>
+<h3>
 50K+
-</h2>
+</h3>
 
 <p>
 Resumes Created
@@ -345,12 +216,11 @@ Resumes Created
 </div>
 
 
-
 <div>
 
-<h2>
+<h3>
 95%
-</h2>
+</h3>
 
 <p>
 ATS Success
@@ -359,12 +229,11 @@ ATS Success
 </div>
 
 
-
 <div>
 
-<h2>
+<h3>
 100+
-</h2>
+</h3>
 
 <p>
 Countries
@@ -373,40 +242,35 @@ Countries
 </div>
 
 
-
 </div>
 
 
+
 </div>
-<!-- =========================
-HERO AI DASHBOARD
-========================= -->
+<!-- HERO DASHBOARD -->
 
-
-<div class="hero-image">
+<div class="hero-dashboard">
 
 
 <div class="dashboard-card">
 
 
-<div class="dashboard-header">
+<div class="dashboard-top">
 
 <h3>
 <i class="ri-ai-generate"></i>
 AI Resume Analysis
 </h3>
 
-
-<span class="status">
-Live
+<span>
+LIVE
 </span>
 
 </div>
 
 
 
-
-<div class="score-circle">
+<div class="score">
 
 <h2>
 92%
@@ -416,17 +280,15 @@ Live
 ATS Score
 </p>
 
-
 </div>
 
 
 
 
+<div class="score-items">
 
-<div class="score-list">
 
-
-<div class="score-item">
+<div>
 
 <span>
 Keywords
@@ -440,7 +302,7 @@ Keywords
 
 
 
-<div class="score-item">
+<div>
 
 <span>
 Formatting
@@ -454,8 +316,7 @@ Formatting
 
 
 
-
-<div class="score-item">
+<div>
 
 <span>
 Readability
@@ -469,8 +330,7 @@ Readability
 
 
 
-
-<div class="score-item">
+<div>
 
 <span>
 Experience
@@ -487,18 +347,11 @@ Experience
 </div>
 
 
-
 </div>
 
 
 
-
-
-
-<!-- Floating Cards -->
-
-
-<div class="floating-card card-one">
+<div class="floating-card one">
 
 <i class="ri-checkbox-circle-fill"></i>
 
@@ -518,11 +371,9 @@ ATS Ready
 
 
 
+<div class="floating-card two">
 
-
-<div class="floating-card card-two">
-
-<i class="ri-file-search-line"></i>
+<i class="ri-search-eye-line"></i>
 
 <div>
 
@@ -539,29 +390,6 @@ AI Scan Complete
 </div>
 
 
-
-
-
-<div class="floating-card card-three">
-
-<i class="ri-medal-line"></i>
-
-<div>
-
-<h4>
-Interview Chance
-</h4>
-
-<p>
-+82%
-</p>
-
-</div>
-
-</div>
-
-
-
 </div>
 
 
@@ -575,34 +403,30 @@ Interview Chance
 
 
 
-<!-- =========================
-TRUST SECTION
-========================= -->
+<!-- TRUST SECTION -->
 
 
-<section class="trusted-section">
+<section class="trust-section">
 
 
 <div class="container">
 
 
-
-<div class="section-title">
+<div class="section-heading">
 
 
 <span>
-Trusted Worldwide
+Trusted Platform
 </span>
 
 
 <h2>
-Trusted By Job Seekers Around The World
+Helping Job Seekers Worldwide
 </h2>
 
 
 <p>
-Thousands of professionals use AL Resume Lab
-to improve their resumes and ATS scores.
+Improve your resume quality with AI-powered tools.
 </p>
 
 
@@ -610,13 +434,10 @@ to improve their resumes and ATS scores.
 
 
 
+<div class="trust-grid">
 
 
-<div class="trusted-grid">
-
-
-
-<div class="trusted-item">
+<div class="trust-box">
 
 <i class="ri-global-line"></i>
 
@@ -628,38 +449,36 @@ to improve their resumes and ATS scores.
 
 
 
-<div class="trusted-item">
+<div class="trust-box">
 
 <i class="ri-user-star-line"></i>
 
 <h3>
-Professionals
+50K+ Users
 </h3>
 
 </div>
 
 
 
-
-<div class="trusted-item">
+<div class="trust-box">
 
 <i class="ri-building-line"></i>
 
 <h3>
-Recruiters
+Recruiter Ready
 </h3>
 
 </div>
 
 
 
-
-<div class="trusted-item">
+<div class="trust-box">
 
 <i class="ri-graduation-cap-line"></i>
 
 <h3>
-Graduates
+Career Growth
 </h3>
 
 </div>
@@ -667,7 +486,6 @@ Graduates
 
 
 </div>
-
 
 
 </div>
@@ -679,21 +497,16 @@ Graduates
 
 
 
+<!-- FEATURES SECTION -->
 
 
-<!-- =========================
-FEATURES SECTION
-========================= -->
-
-
-<section id="features" class="features">
+<section class="features" id="features">
 
 
 <div class="container">
 
 
-
-<div class="section-title">
+<div class="section-heading">
 
 
 <span>
@@ -701,22 +514,17 @@ Powerful Features
 </span>
 
 
-
 <h2>
 Everything You Need For A Winning Resume
 </h2>
 
 
-
 <p>
-AI tools designed to build,
-analyze and optimize your resume.
+AI tools designed to build, analyze and optimize your career documents.
 </p>
 
 
 </div>
-
-
 
 
 
@@ -733,12 +541,10 @@ AI Resume Builder
 </h3>
 
 <p>
-Create professional ATS-friendly resumes
-with AI assistance.
+Create professional ATS-friendly resumes with AI assistance.
 </p>
 
 </div>
-
 
 
 
@@ -752,12 +558,10 @@ ATS Checker
 </h3>
 
 <p>
-Analyze your resume and get instant
-ATS compatibility score.
+Analyze your resume and get instant ATS compatibility score.
 </p>
 
 </div>
-
 
 
 
@@ -771,11 +575,10 @@ Resume Analysis
 </h3>
 
 <p>
-Find missing keywords and formatting issues.
+Find missing keywords and improve weak sections.
 </p>
 
 </div>
-
 
 
 
@@ -789,12 +592,10 @@ AI Suggestions
 </h3>
 
 <p>
-Get smart recommendations to improve
-your resume.
+Get smart recommendations for better results.
 </p>
 
 </div>
-
 
 
 
@@ -804,15 +605,14 @@ your resume.
 <i class="ri-mail-send-line"></i>
 
 <h3>
-Cover Letter Generator
+Cover Letter AI
 </h3>
 
 <p>
-Generate job-specific cover letters easily.
+Generate job-specific cover letters quickly.
 </p>
 
 </div>
-
 
 
 
@@ -833,7 +633,6 @@ Download clean ATS-ready resume files.
 
 
 
-
 </div>
 
 
@@ -841,146 +640,114 @@ Download clean ATS-ready resume files.
 
 
 </section>
-<!-- =========================
-HOW IT WORKS
-========================= -->
+<!-- HOW IT WORKS -->
 
-
-<section id="process" class="how-section">
-
+<section class="process" id="process">
 
 <div class="container">
 
 
-<div class="section-title">
+<div class="section-heading">
 
 <span>
 Simple Process
 </span>
 
-
 <h2>
-Get Your ATS Ready Resume In Minutes
+Create Your Resume In Minutes
 </h2>
 
-
 <p>
-Upload, analyze, improve and download your professional resume.
+Upload, analyze, improve and download your ATS-ready resume.
 </p>
-
 
 </div>
 
 
 
-
-
-<div class="steps-container">
+<div class="process-grid">
 
 
 
-<div class="step-card">
+<div class="process-card">
 
-
-<div class="step-number">
+<div class="number">
 01
 </div>
 
-
-<i class="ri-upload-cloud-2-line"></i>
-
+<i class="ri-upload-cloud-line"></i>
 
 <h3>
 Upload Resume
 </h3>
 
-
 <p>
-Upload your existing CV or resume file.
+Upload your existing CV and start AI analysis.
 </p>
-
 
 </div>
 
 
 
 
+<div class="process-card">
 
-<div class="step-card">
-
-
-<div class="step-number">
+<div class="number">
 02
 </div>
 
-
 <i class="ri-ai-generate"></i>
-
 
 <h3>
 AI Analysis
 </h3>
 
-
 <p>
-AI checks keywords, format and ATS compatibility.
+Our AI checks keywords, format and ATS score.
 </p>
-
 
 </div>
 
 
 
 
+<div class="process-card">
 
-<div class="step-card">
-
-
-<div class="step-number">
+<div class="number">
 03
 </div>
 
-
 <i class="ri-bar-chart-line"></i>
-
 
 <h3>
 Improve Score
 </h3>
 
-
 <p>
-Follow AI recommendations to improve your resume.
+Follow recommendations to improve your resume.
 </p>
-
 
 </div>
 
 
 
 
+<div class="process-card">
 
-<div class="step-card">
-
-
-<div class="step-number">
+<div class="number">
 04
 </div>
 
-
 <i class="ri-download-cloud-line"></i>
-
 
 <h3>
 Download
 </h3>
 
-
 <p>
-Export your ATS-friendly resume.
+Export your professional resume.
 </p>
 
-
 </div>
 
 
@@ -989,7 +756,6 @@ Export your ATS-friendly resume.
 
 
 </div>
-
 
 </section>
 
@@ -998,24 +764,17 @@ Export your ATS-friendly resume.
 
 
 
-<!-- =========================
-ATS CHECKER SECTION
-========================= -->
+
+<!-- ATS CHECKER -->
 
 
-<section id="ats" class="ats-section">
+<section class="ats-section" id="ats">
 
 
 <div class="container">
 
 
-
-<div class="ats-box">
-
-
-
-<div class="section-title">
-
+<div class="section-heading">
 
 <span>
 AI ATS Scanner
@@ -1028,26 +787,18 @@ Check Your Resume Score
 
 
 <p>
-Upload your resume and get AI-powered analysis.
+Upload your resume and get instant AI feedback.
 </p>
-
 
 </div>
 
 
 
 
-
-
-<!-- Upload Area -->
-
-
-<div class="upload-box">
-
+<div class="ats-box">
 
 
 <i class="ri-upload-cloud-2-line"></i>
-
 
 
 <h3>
@@ -1055,23 +806,16 @@ Drop Your Resume Here
 </h3>
 
 
-
 <p>
-PDF or DOCX files supported
+PDF and DOCX supported
 </p>
 
 
-
-
-<input 
-type="file"
-id="resumeUpload"
-accept=".pdf,.doc,.docx">
+<input type="file" id="resumeUpload">
 
 
 
-<label for="resumeUpload"
-class="btn-primary">
+<label for="resumeUpload" class="primary-btn">
 
 Choose Resume
 
@@ -1079,25 +823,7 @@ Choose Resume
 
 
 
-<p class="upload-message">
-
-No file selected
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-
-<button 
-id="checkATS"
-class="btn-primary">
+<button class="primary-btn" id="checkATS">
 
 Analyze Resume
 
@@ -1106,324 +832,27 @@ Analyze Resume
 
 
 
-
-<!-- Loading -->
-
-
-<div class="analysis-loading"
-style="display:none;">
-
-
-<div class="loading"></div>
-
-
-<h3>
-AI is analyzing your resume...
-</h3>
-
-
-</div>
-
-
-
-
-
-
-
-
-<!-- Result -->
-
-
-<div 
-class="ats-result"
-style="display:none;">
-
-
-
-<div class="report-card">
-
+<div class="result">
 
 
 <h2>
-Your ATS Score
-</h2>
-
-
-
-
-<div class="score-circle">
-
-
-<h1 id="atsScore">
-0%
-</h1>
-
-
-<p>
 ATS Score
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="result-grid">
-
-
-
-<div>
-
-<h3>
-Keyword Match
-</h3>
-
-<p>
-Strong
-</p>
-
-</div>
-
-
-
-
-
-<div>
-
-<h3>
-Formatting
-</h3>
-
-<p>
-ATS Friendly
-</p>
-
-</div>
-
-
-
-
-
-<div>
-
-<h3>
-AI Suggestions
-</h3>
-
-<p>
-Available
-</p>
-
-</div>
-
-
-
-
-</div>
-
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-</div>
-
-
-    </section>
-    <!-- =========================
-PRICING SECTION
-========================= -->
-
-
-<section id="pricing" class="pricing-section">
-
-
-<div class="container">
-
-
-
-<div class="section-title">
-
-
-<span>
-Simple Pricing
-</span>
-
-
-<h2>
-Choose The Right Plan For You
 </h2>
 
 
+<div class="ats-score">
+
+92%
+
+</div>
+
+
 <p>
-Start building better resumes with AI-powered tools.
+Your resume is optimized for ATS systems.
 </p>
 
 
 </div>
-
-
-
-
-
-<div class="pricing-grid">
-
-
-
-
-
-<div class="price-card">
-
-
-<h3>
-Free
-</h3>
-
-
-<div class="price">
-$0
-</div>
-
-
-<ul>
-
-<li>
-✔ Basic Resume Builder
-</li>
-
-<li>
-✔ Limited ATS Checks
-</li>
-
-<li>
-✔ Basic Templates
-</li>
-
-<li>
-✔ PDF Export
-</li>
-
-</ul>
-
-
-
-<button class="price-btn">
-Get Started
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="price-card featured">
-
-
-<h3>
-Professional
-</h3>
-
-
-<div class="price">
-$9.99
-</div>
-
-
-<ul>
-
-<li>
-✔ Unlimited ATS Checks
-</li>
-
-<li>
-✔ AI Resume Optimization
-</li>
-
-<li>
-✔ Cover Letter Generator
-</li>
-
-<li>
-✔ Premium Templates
-</li>
-
-</ul>
-
-
-
-<button class="price-btn">
-Start Pro
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="price-card">
-
-
-<h3>
-Career
-</h3>
-
-
-<div class="price">
-$19.99
-</div>
-
-
-<ul>
-
-<li>
-✔ Everything In Pro
-</li>
-
-<li>
-✔ Advanced AI Suggestions
-</li>
-
-<li>
-✔ Career Guidance
-</li>
-
-<li>
-✔ Priority Support
-</li>
-
-</ul>
-
-
-
-<button class="price-btn">
-Upgrade
-</button>
-
-
-</div>
-
-
 
 
 
@@ -1441,36 +870,160 @@ Upgrade
 
 
 
-
-<!-- =========================
-TESTIMONIAL SECTION
-========================= -->
+<!-- PRICING -->
 
 
-<section class="testimonial-section">
+<section class="pricing" id="pricing">
 
 
 <div class="container">
 
 
-
-<div class="section-title">
-
+<div class="section-heading">
 
 <span>
-User Reviews
+Pricing Plans
 </span>
+
+<h2>
+Choose Your Career Plan
+</h2>
+
+</div>
+
+
+
+
+<div class="pricing-grid">
+
+
+
+<div class="price-card">
+
+<h3>
+Free
+</h3>
 
 
 <h2>
-What Our Users Say
+$0
 </h2>
+
+
+<ul>
+
+<li>Basic Resume Builder</li>
+
+<li>Limited ATS Checks</li>
+
+<li>Basic Templates</li>
+
+</ul>
+
+
+<a href="#" class="primary-btn">
+Start Free
+</a>
 
 
 </div>
 
 
 
+
+
+<div class="price-card popular">
+
+
+<h3>
+Professional
+</h3>
+
+
+<h2>
+$9.99
+</h2>
+
+
+<ul>
+
+<li>Unlimited ATS Checks</li>
+
+<li>AI Optimization</li>
+
+<li>Premium Templates</li>
+
+</ul>
+
+
+<a href="#" class="primary-btn">
+Start Pro
+</a>
+
+
+</div>
+
+
+
+
+
+<div class="price-card">
+
+<h3>
+Career
+</h3>
+
+
+<h2>
+$19.99
+</h2>
+
+
+<ul>
+
+<li>Advanced AI Tools</li>
+
+<li>Career Guidance</li>
+
+<li>Priority Support</li>
+
+</ul>
+
+
+<a href="#" class="primary-btn">
+Upgrade
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+<!-- TESTIMONIALS -->
+
+<section class="testimonials">
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<span>
+User Reviews
+</span>
+
+<h2>
+What Our Users Say
+</h2>
+
+</div>
 
 
 
@@ -1481,98 +1034,61 @@ What Our Users Say
 
 <div class="testimonial-card">
 
-
 <p>
-
-"AL Resume Lab helped me improve my resume
-and get more interview calls."
-
+"AL Resume Lab helped me improve my resume and get more interview opportunities."
 </p>
-
-
 
 <h3>
 Ahmed Khan
 </h3>
 
-
 <span>
 Safety Officer
 </span>
-
 
 </div>
 
 
 
-
-
-
-
 <div class="testimonial-card">
 
-
 <p>
-
-"The ATS checker showed my mistakes
-and helped me optimize my CV."
-
+"The ATS checker showed my mistakes and helped me optimize my CV."
 </p>
-
-
 
 <h3>
 Sarah Ali
 </h3>
 
-
 <span>
 Marketing Professional
 </span>
 
-
 </div>
-
-
-
-
 
 
 
 <div class="testimonial-card">
 
-
 <p>
-
-"Creating an ATS-friendly resume became
-very easy with AI."
-
+"Creating an ATS-friendly resume became simple with AI."
 </p>
-
-
 
 <h3>
 Usman Raza
 </h3>
 
-
 <span>
 Engineer
 </span>
 
-
-</div>
-
-
-
-
-
 </div>
 
 
 
 </div>
 
+</div>
 
 </section>
 
@@ -1582,129 +1098,70 @@ Engineer
 
 
 
+<!-- FAQ -->
 
-<!-- =========================
-FAQ SECTION
-========================= -->
-
-
-<section id="faq" class="faq-section">
+<section class="faq" id="faq">
 
 
 <div class="container">
 
 
-
-<div class="section-title">
-
+<div class="section-heading">
 
 <span>
 FAQ
 </span>
 
-
 <h2>
 Frequently Asked Questions
 </h2>
-
 
 </div>
 
 
 
-
-
-
-
-<div class="faq-container">
-
-
-
-
+<div class="faq-box">
 
 
 <div class="faq-item">
-
 
 <h3>
 What is AL Resume Lab?
 </h3>
 
-
 <p>
-AL Resume Lab is an AI-powered platform
-for creating and optimizing ATS-friendly resumes.
+An AI-powered platform to create and optimize ATS-friendly resumes.
 </p>
-
 
 </div>
 
 
 
-
-
-
-
 <div class="faq-item">
-
 
 <h3>
-What file formats are supported?
+Which files are supported?
 </h3>
 
-
 <p>
-You can upload PDF and DOCX resume files.
+PDF and DOCX resume files are supported.
 </p>
-
 
 </div>
 
 
 
-
-
-
-
 <div class="faq-item">
-
 
 <h3>
 How does ATS checking work?
 </h3>
 
-
 <p>
-Our AI analyzes keywords, formatting,
-skills and resume structure.
+AI checks keywords, formatting and resume structure.
 </p>
 
-
 </div>
-
-
-
-
-
-
-
-<div class="faq-item">
-
-
-<h3>
-Can I create a cover letter?
-</h3>
-
-
-<p>
-Yes, AI can generate customized cover letters
-for different jobs.
-</p>
-
-
-</div>
-
-
 
 
 
@@ -1715,139 +1172,33 @@ for different jobs.
 
 
 </section>
-<!-- =========================
-CONTACT SECTION
-========================= -->
-
-<section id="contact" class="contact-section">
-
-<div class="container">
 
 
-<div class="section-title">
 
-<span>
-Contact
-</span>
 
+
+
+
+<!-- FOOTER -->
+
+
+<footer>
+
+
+<div class="container footer-content">
+
+
+<div>
 
 <h2>
-Build Your Career With AI
+AL Resume Lab
 </h2>
 
-
 <p>
-Have questions? Our team is ready to help.
+AI-powered resume builder and ATS checker helping professionals get hired faster.
 </p>
 
 </div>
-
-
-
-<div class="contact-box">
-
-
-<div>
-
-<i class="ri-mail-line"></i>
-
-<h3>
-Email Support
-</h3>
-
-<p>
-alresumehubofficial@gmail.com
-</p>
-
-
-</div>
-
-
-
-
-<div>
-
-<i class="ri-time-line"></i>
-
-<h3>
-AI Support
-</h3>
-
-<p>
-Available 24/7
-</p>
-
-
-</div>
-
-
-
-
-<div>
-
-<i class="ri-global-line"></i>
-
-<h3>
-Worldwide
-</h3>
-
-<p>
-Helping Job Seekers Globally
-</p>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- =========================
-FOOTER
-========================= -->
-
-
-<footer class="footer">
-
-
-<div class="container">
-
-
-
-<div class="footer-grid">
-
-
-
-
-
-<div>
-
-<h3>
-AL Resume Lab
-</h3>
-
-
-<p>
-AI-powered resume builder and ATS checker
-helping professionals get hired faster.
-</p>
-
-
-</div>
-
-
-
 
 
 
@@ -1857,27 +1208,19 @@ helping professionals get hired faster.
 Product
 </h3>
 
-
 <a href="#">
 Resume Builder
 </a>
-
 
 <a href="#">
 ATS Checker
 </a>
 
-
 <a href="#">
 Cover Letter
 </a>
 
-
 </div>
-
-
-
-
 
 
 
@@ -1887,56 +1230,19 @@ Cover Letter
 Company
 </h3>
 
-
 <a href="#">
 About
 </a>
-
 
 <a href="#">
 Contact
 </a>
 
-
 <a href="#">
-Privacy Policy
+Privacy
 </a>
-
 
 </div>
-
-
-
-
-
-
-
-
-<div>
-
-<h3>
-Follow Us
-</h3>
-
-
-<a href="#">
-Facebook
-</a>
-
-
-<a href="#">
-Instagram
-</a>
-
-
-<a href="#">
-LinkedIn
-</a>
-
-
-</div>
-
-
 
 
 
@@ -1944,30 +1250,15 @@ LinkedIn
 
 
 
-
-
-
-<div class="footer-bottom">
-
-
-<p>
+<div class="copyright">
 
 © 2026 AL Resume Lab. All Rights Reserved.
 
-</p>
-
-
 </div>
 
-
-
-
-
-</div>
 
 
 </footer>
-
 
 
 
@@ -1976,69 +1267,9 @@ LinkedIn
 
 
 
-
-
-<!-- =========================
-JAVASCRIPT
-========================= -->
-
-
 <script src="script.js"></script>
 
 
-
-
-<!-- =========================
-LOADER SCRIPT FIX
-========================= -->
-
-
-<script>
-
-
-window.addEventListener("load",()=>{
-
-
-const loader =
-document.getElementById("loader");
-
-
-if(loader){
-
-
-setTimeout(()=>{
-
-
-loader.style.opacity="0";
-
-
-setTimeout(()=>{
-
-
-loader.style.display="none";
-
-
-},500);
-
-
-
-},1200);
-
-
-
-}
-
-
-});
-
-
-</script>
-
-
-
-
-
 </body>
-
 
 </html>
