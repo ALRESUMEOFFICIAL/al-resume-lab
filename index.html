@@ -188,6 +188,48 @@ of getting hired.
 
 </section>
 
+  <section style="padding:60px 20px;text-align:center;background:#eef5ff;">
+
+<h2 style="color:#0A66C2;">Upload Your Resume</h2>
+
+<p>Select your resume in PDF, DOC or DOCX format.</p>
+
+<input
+type="file"
+id="resume"
+accept=".pdf,.doc,.docx"
+style="margin:20px;font-size:16px;">
+
+<p id="filename" style="color:#555;"></p>
+
+<button
+onclick="analyzeResume()"
+style="background:#0A66C2;color:white;padding:15px 30px;border:none;border-radius:8px;font-size:18px;cursor:pointer;">
+Analyze Resume
+</button>
+
+</section>
+
+<script>
+const resume=document.getElementById("resume");
+const filename=document.getElementById("filename");
+
+resume.addEventListener("change",function(){
+if(this.files.length>0){
+filename.innerHTML="Selected File: <b>"+this.files[0].name+"</b>";
+}
+});
+
+function analyzeResume(){
+if(resume.files.length===0){
+alert("Please upload your resume first.");
+return;
+}
+
+alert("AI Resume Analysis Coming Soon!");
+}
+</script>
+  
 <section class="steps">
 
 <h2>How It Works</h2>
