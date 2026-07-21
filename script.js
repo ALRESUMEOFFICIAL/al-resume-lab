@@ -1,861 +1,145 @@
-/* =================================
-   AL RESUME LAB
-   Main JavaScript
-================================= */
+document.addEventListener('DOMContentLoaded', () => {
 
-
-/* ================================
-   MOBILE MENU
-================================ */
-
-
-const menuBtn = document.querySelector(".menu-btn");
-const navLinks = document.querySelector(".nav-links");
-
-
-if(menuBtn){
-
-    menuBtn.addEventListener("click",()=>{
-
-        navLinks.classList.toggle("active");
-
+  /* ---- Mobile nav toggle ---- */
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', isOpen);
     });
-
-}
-
-
-
-/* ================================
-   SMOOTH SCROLL
-================================ */
-
-
-document.querySelectorAll("a[href^='#']")
-.forEach(link=>{
-
-
-    link.addEventListener("click",function(e){
-
-        const target =
-        document.querySelector(this.getAttribute("href"));
-
-
-        if(target){
-
-            e.preventDefault();
-
-            target.scrollIntoView({
-
-                behavior:"smooth"
-
-            });
-
-        }
-
-
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('is-open'));
     });
+  }
 
+  /* ---- Hero ATS gauge animation ---- */
+  const gaugeFill = document.getElementById('heroGaugeFill');
+  const gaugeNum = document.getElementById('heroGaugeNum');
+  const CIRCUMFERENCE = 327; // 2 * PI * 52, rounded
+  const TARGET_SCORE = 91;
 
-});
+  function animateGauge() {
+    if (!gaugeFill || !gaugeNum) return;
+    const offset = CIRCUMFERENCE - (CIRCUMFERENCE * TARGET_SCORE) / 100;
+    gaugeFill.style.strokeDashoffset = offset;
 
+    let current = 0;
+    const step = () => {
+      current += 2;
+      if (current >= TARGET_SCORE) current = TARGET_SCORE;
+      gaugeNum.textContent = current;
+      if (current < TARGET_SCORE) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
 
+  /* ---- Typing effect for mock resume bullet ---- */
+  const typingEl = document.getElementById('typingBullet');
+  const bulletText = 'Led migration of 40+ components, cutting page load time by 35%';
+  function typeBullet() {
+    if (!typingEl) return;
+    let i = 0;
+    typingEl.textContent = '';
+    const interval = setInterval(() => {
+      typingEl.textContent = bulletText.slice(0, i);
+      i++;
+      if (i > bulletText.length) clearInterval(interval);
+    }, 28);
+  }
 
-/* ================================
-   SCROLL ANIMATION
-================================ */
-
-
-const revealElements =
-document.querySelectorAll(
-".feature-card, .trust-card, .step-card, .price-card, .testimonial-card"
-);
-
-
-
-const revealOnScroll = ()=>{
-
-
-    revealElements.forEach(element=>{
-
-
-        const position =
-        element.getBoundingClientRect().top;
-
-
-        const screenHeight =
-        window.innerHeight;
-
-
-
-        if(position < screenHeight - 100){
-
-
-            element.classList.add("fade-up");
-
-
-        }
-
-
-
+  /* ---- Animated stat counters ---- */
+  function animateCounters(container) {
+    const nums = container.querySelectorAll('.stat-card__num');
+    nums.forEach(el => {
+      const target = parseInt(el.dataset.count, 10) || 0;
+      let current = 0;
+      const increment = Math.max(1, Math.ceil(target / 80));
+      const step = () => {
+        current += increment;
+        if (current >= target) current = target;
+        el.textContent = current.toLocaleString();
+        if (current < target) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
     });
-
-
-};
-
-
-window.addEventListener(
-"scroll",
-revealOnScroll
-);
-
-
-revealOnScroll();
-
-
-
-
-/* ================================
-   ATS SCORE COUNTER
-================================ */
-
-
-const score =
-document.querySelector(".score-number");
-
-
-if(score){
-
-
-let value = 0;
-
-const target = 92;
-
-
-const counter = setInterval(()=>{
-
-
-    value++;
-
-    score.innerHTML=value+"%";
-
-
-    if(value>=target){
-
-        clearInterval(counter);
-
-    }
-
-
-},20);
-
-
-
-}
-
-
-
-
-/* ================================
-   RESUME UPLOAD PREVIEW
-================================ */
-
-
-const uploadInput =
-document.querySelector("#resumeUpload");
-
-
-const fileName =
-document.querySelector(".file-name");
-
-
-
-if(uploadInput){
-
-
-uploadInput.addEventListener(
-"change",
-function(){
-
-
-if(this.files.length > 0){
-
-
-fileName.innerHTML =
-"Selected: "
-+
-this.files[0].name;
-
-
-}
-
-
-});
-
-
-}
-
-
-
-
-/* ================================
-   BUTTON CLICK EFFECT
-================================ */
-
-
-const buttons =
-document.querySelectorAll("button,.btn-primary");
-
-
-buttons.forEach(btn=>{
-
-
-btn.addEventListener("click",()=>{
-
-
-btn.style.transform="scale(.96)";
-
-
-setTimeout(()=>{
-
-
-btn.style.transform="";
-
-
-},150);
-
-
-
-});
-
-
-});
-
-
-
-/* ================================
-   PAGE LOADING
-================================ */
-
-
-window.addEventListener(
-"load",
-()=>{
-
-
-document.body.classList.add("loaded");
-
-
-});
-
-
-
-console.log(
-"AL Resume Lab Loaded Successfully 🚀"
-);
-/* =================================
-   DRAG & DROP RESUME UPLOAD
-================================= */
-
-
-const dropArea =
-document.querySelector(".upload-box");
-
-const resumeInput =
-document.querySelector("#resumeUpload");
-
-
-if(dropArea && resumeInput){
-
-
-    ["dragenter","dragover"]
-    .forEach(eventName=>{
-
-
-        dropArea.addEventListener(
-        eventName,
-        (e)=>{
-
-
-            e.preventDefault();
-
-            dropArea.classList.add("active");
-
-
-        });
-
-
+  }
+
+  /* ---- Score bars fill on view ---- */
+  function fillScoreBars(container) {
+    container.querySelectorAll('.score-track').forEach(track => track.classList.add('in-view'));
+  }
+
+  /* ---- IntersectionObserver for reveal + one-shot animations ---- */
+  const heroSection = document.querySelector('.hero');
+  const statsSection = document.querySelector('.stats');
+  const scoreSection = document.querySelector('.score');
+  const builderSection = document.querySelector('.builder');
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      if (entry.target === heroSection) { animateGauge(); typeBullet(); io.unobserve(entry.target); }
+      if (entry.target === statsSection) { animateCounters(entry.target); io.unobserve(entry.target); }
+      if (entry.target === scoreSection) { fillScoreBars(entry.target); io.unobserve(entry.target); }
+      if (entry.target === builderSection) { io.unobserve(entry.target); }
     });
+  }, { threshold: 0.35 });
 
+  [heroSection, statsSection, scoreSection].forEach(s => s && io.observe(s));
 
-
-    ["dragleave","drop"]
-    .forEach(eventName=>{
-
-
-        dropArea.addEventListener(
-        eventName,
-        (e)=>{
-
-
-            e.preventDefault();
-
-            dropArea.classList.remove("active");
-
-
-        });
-
-
+  /* ---- Generic reveal-on-scroll for cards ---- */
+  const revealTargets = document.querySelectorAll(
+    '.feature-card, .analysis-card, .template-card, .workflow-step, .why-card, .price-card, .testimonial-card'
+  );
+  revealTargets.forEach(el => el.classList.add('reveal'));
+  const revealIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealIO.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.15 });
+  revealTargets.forEach(el => revealIO.observe(el));
 
-
-
-    dropArea.addEventListener(
-    "drop",
-    (e)=>{
-
-
-        const files =
-        e.dataTransfer.files;
-
-
-        if(files.length){
-
-            resumeInput.files = files;
-
-            showFile(files[0]);
-
-        }
-
-
+  /* ---- FAQ accordion ---- */
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-item__q');
+    q.addEventListener('click', () => {
+      const wasOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item.is-open').forEach(i => i.classList.remove('is-open'));
+      if (!wasOpen) item.classList.add('is-open');
     });
+  });
 
-
-
-    resumeInput.addEventListener(
-    "change",
-    ()=>{
-
-
-        if(resumeInput.files.length){
-
-            showFile(
-            resumeInput.files[0]
-            );
-
-        }
-
-
+  /* ---- Contact form (front-end only) ---- */
+  const contactForm = document.getElementById('contactForm');
+  const contactStatus = document.getElementById('contactStatus');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      contactStatus.textContent = "Thanks — we'll get back to you within one business day.";
+      contactForm.reset();
     });
-
-
-}
-
-
-
-function showFile(file){
-
-
-const allowed = [
-
-"application/pdf",
-
-"application/msword",
-
-"application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-
-];
-
-
-const message =
-document.querySelector(".upload-message");
-
-
-
-if(!allowed.includes(file.type)){
-
-
-if(message){
-
-message.innerHTML =
-"❌ Only PDF or DOCX files allowed";
-
-}
-
-
-return;
-
-}
-
-
-
-if(message){
-
-message.innerHTML =
-"✅ "+file.name+" Ready For ATS Check";
-
-}
-
-
-
-}
-
-
-
-/* =================================
-   ATS CHECK BUTTON
-================================= */
-
-
-const atsButton =
-document.querySelector("#checkATS");
-
-
-const loadingBox =
-document.querySelector(".analysis-loading");
-
-
-const resultBox =
-document.querySelector(".ats-result");
-
-
-
-if(atsButton){
-
-
-atsButton.addEventListener(
-"click",
-()=>{
-
-
-if(loadingBox){
-
-loadingBox.style.display="block";
-
-}
-
-
-
-if(resultBox){
-
-resultBox.style.display="none";
-
-}
-
-
-
-
-setTimeout(()=>{
-
-
-if(loadingBox){
-
-loadingBox.style.display="none";
-
-}
-
-
-
-if(resultBox){
-
-resultBox.style.display="block";
-
-}
-
-
-startATSAnimation();
-
-
-
-},3000);
-
-
+  }
+
+  /* ---- Newsletter form (front-end only) ---- */
+  const newsletterForm = document.getElementById('newsletterForm');
+  const newsletterStatus = document.getElementById('newsletterStatus');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      newsletterStatus.textContent = "Subscribed — welcome aboard!";
+      newsletterForm.reset();
+    });
+  }
+
+  /* ---- Sticky navbar shadow on scroll ---- */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 8) navbar.classList.add('is-scrolled');
+    else navbar.classList.remove('is-scrolled');
+  }, { passive: true });
 
 });
-
-}
-
-
-
-
-/* =================================
-   ATS RESULT ANIMATION
-================================= */
-
-
-function startATSAnimation(){
-
-
-const score =
-document.querySelector("#atsScore");
-
-
-if(score){
-
-
-let current=0;
-
-let finalScore=87;
-
-
-
-let timer=setInterval(()=>{
-
-
-current++;
-
-score.innerHTML=current+"%";
-
-
-if(current>=finalScore){
-
-clearInterval(timer);
-
-}
-
-
-
-},25);
-
-
-
-}
-
-
-
-}
-
-
-
-/* =================================
-   NAVBAR ACTIVE LINK
-================================= */
-
-
-const sections =
-document.querySelectorAll("section");
-
-
-const links =
-document.querySelectorAll(".nav-links a");
-
-
-
-window.addEventListener(
-"scroll",
-()=>{
-
-
-let current="";
-
-
-sections.forEach(section=>{
-
-
-const top =
-window.scrollY;
-
-
-if(top >= section.offsetTop-150){
-
-
-current =
-section.getAttribute("id");
-
-
-}
-
-
-
-});
-
-
-
-links.forEach(link=>{
-
-
-link.classList.remove("active");
-
-
-if(link.getAttribute("href")
-.includes(current)){
-
-
-link.classList.add("active");
-
-
-}
-
-
-});
-
-
-
-});
-
-  /* =================================
-   AI ATS ANALYSIS ENGINE (FRONTEND)
-================================= */
-
-
-const analyzeResume = (resumeText)=>{
-
-
-let keywords = [
-
-"leadership",
-"communication",
-"management",
-"experience",
-"skills",
-"education",
-"certification",
-"project",
-"achievement",
-"technology"
-
-];
-
-
-let matched = 0;
-
-
-keywords.forEach(word=>{
-
-
-if(resumeText
-.toLowerCase()
-.includes(word)){
-
-
-matched++;
-
-}
-
-
-});
-
-
-
-let score =
-Math.floor(
-(matched / keywords.length) * 100
-);
-
-
-
-return score;
-
-
-
-};
-
-
-
-
-
-/* =================================
-   ATS REPORT GENERATOR
-================================= */
-
-
-function generateATSReport(score){
-
-
-let report = {
-
-overallScore: score,
-
-keywordMatch:
-score > 70 ? "Strong" : "Needs Improvement",
-
-format:
-
-score > 80
-?
-"ATS Friendly"
-:
-"Improve Formatting",
-
-
-suggestions:[]
-
-};
-
-
-
-if(score < 80){
-
-report.suggestions.push(
-"Add more job-related keywords"
-);
-
-}
-
-
-
-if(score < 70){
-
-report.suggestions.push(
-"Improve professional summary"
-);
-
-}
-
-
-
-report.suggestions.push(
-"Add measurable achievements"
-);
-
-
-
-return report;
-
-
-}
-
-
-
-
-/* =================================
-   DISPLAY ATS RESULT
-================================= */
-
-
-function showATSReport(data){
-
-
-const result =
-document.querySelector(".ats-result");
-
-
-if(!result) return;
-
-
-
-result.innerHTML = `
-
-<div class="report-card">
-
-<h2>
-AI ATS Report
-</h2>
-
-
-<h1>
-${data.overallScore}%
-</h1>
-
-
-<p>
-Keyword Match:
-<strong>
-${data.keywordMatch}
-</strong>
-</p>
-
-
-<p>
-Format Status:
-<strong>
-${data.format}
-</strong>
-</p>
-
-
-<h3>
-AI Suggestions
-</h3>
-
-
-<ul>
-
-${data.suggestions
-.map(item=>`
-<li>${item}</li>
-`)
-.join("")}
-
-</ul>
-
-
-</div>
-
-`;
-
-
-
-}
-
-
-
-
-
-/* =================================
-   SAVE ANALYSIS HISTORY
-================================= */
-
-
-function saveATSHistory(report){
-
-
-let history =
-JSON.parse(
-localStorage.getItem("atsHistory")
-)
-||
-[];
-
-
-
-history.push({
-
-score:
-report.overallScore,
-
-date:
-new Date()
-.toLocaleDateString()
-
-});
-
-
-
-localStorage.setItem(
-"atsHistory",
-JSON.stringify(history)
-);
-
-
-
-}
-
-
-
-
-
-/* =================================
-   GET USER ATS HISTORY
-================================= */
-
-
-function getATSHistory(){
-
-
-return JSON.parse(
-
-localStorage.getItem("atsHistory")
-
-)
-||
-[];
-
-
-}
-
-
-
-
-console.log(
-"AI ATS Engine Ready 🤖"
-);
