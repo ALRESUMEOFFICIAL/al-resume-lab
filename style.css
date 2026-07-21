@@ -2791,3 +2791,87 @@ to{
     color:#050d1f;
 
 }
+/* =========================
+   NAVBAR PREMIUM FIX
+========================= */
+
+.navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+}
+
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:35px;
+    flex:1;
+}
+
+
+.nav-links li{
+    position:relative;
+}
+
+
+.nav-links a{
+    display:inline-flex;
+    padding:10px 5px;
+    color:#c7d5ef;
+    font-size:15px;
+    font-weight:500;
+    transition:.3s;
+}
+
+
+.nav-links a:hover{
+    color:#00d9ff;
+}
+
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:linear-gradient(
+    90deg,
+    #0066ff,
+    #00d9ff
+    );
+
+    transition:.3s;
+
+}
+
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+
+header{
+
+    position:sticky;
+
+    top:0;
+
+    background:rgba(5,13,31,.65);
+
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
