@@ -2206,115 +2206,79 @@ SELECTION
 /*==========================
 END OF FILE
 ==========================*/
+/* ===== Mobile Responsive Fix ===== */
 
-/* ==========================================
-AL Resume Lab - Mobile Fix
-========================================== */
-
-@media (max-width:768px){
-
-.header{
-    padding:14px 18px;
+html, body {
+    overflow-x: hidden;
+    width: 100%;
 }
 
-.logo{
-    width:52px;
-    height:52px;
-}
+@media (max-width: 768px) {
 
-.logo-text h2{
-    font-size:1.5rem;
-}
+    .hero,
+    .hero-section {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        overflow: hidden;
+    }
 
-.hero{
-    padding-top:120px;
-    padding-bottom:60px;
-}
+    .hero h1,
+    .hero-title {
+        font-size: 42px;
+        line-height: 1.08;
+        text-align: center;
+        word-break: normal;
+    }
 
-.hero-wrapper{
-    grid-template-columns:1fr;
-    text-align:center;
-    gap:35px;
-}
+    .hero p,
+    .hero-description {
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: center;
+        max-width: 100%;
+    }
 
-.hero-content h1{
-    font-size:2.25rem;
-    line-height:1.15;
-    margin-bottom:20px;
-}
+    .badge,
+    .trusted-badge {
+        max-width: 100%;
+        width: fit-content;
+        margin: 20px auto;
+        font-size: 16px;
+        white-space: normal;
+    }
 
-.hero-content p{
-    font-size:1rem;
-    line-height:1.8;
-    max-width:100%;
-    margin:0 auto 30px;
-}
+    .hero-buttons,
+    .cta-buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
 
-.hero-buttons{
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-}
+    .hero-buttons button,
+    .cta-buttons button {
+        width: 100%;
+        max-width: 350px;
+        height: 60px;
+    }
 
-.hero-buttons .primary-btn,
-.hero-buttons .secondary-btn{
-    width:100%;
-    max-width:340px;
-    margin:auto;
-}
+    .logo {
+        font-size: 32px;
+    }
 
-.hero-stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-    margin-top:35px;
-}
+    .navbar {
+        padding: 20px;
+    }
 
-.stat-card{
-    width:100%;
-    padding:18px 10px;
-}
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 
-.stat-card h2{
-    font-size:1.5rem;
-}
+    .stat-card {
+        width: 100%;
+    }
 
-.stat-card p{
-    font-size:.8rem;
-}
-
-.resume-window{
-    width:100%;
-    max-width:320px;
-    margin:auto;
-}
-
-.floating-card{
-    display:none;
-}
-
-.hero-image{
-    margin-top:10px;
-}
-
-}
-
-/* Remove white cursor */
-
-.cursor,
-.cursor-blur{
-    display:none !important;
-}
-
-/* Remove click highlight on mobile */
-
-*{
-    -webkit-tap-highlight-color:transparent;
-}
-
-/* Prevent horizontal scroll */
-
-html,
-body{
-    overflow-x:hidden;
 }
