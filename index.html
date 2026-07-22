@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Comprehensive Multi-Purpose Web Application Template">
-    <title>Enterprise Web Application Platform</title>
+    <meta name="description" content="Enterprise Web Application Dashboard">
+    <title>Enterprise Application Platform</title>
 </head>
 <body>
 
-    <!-- ========================================== -->
-    <!-- MAIN NAVIGATION BAR                        -->
-    <!-- ========================================== -->
+    <!-- Main Navigation Header -->
     <header id="main-header">
         <div class="header-container">
-            <!-- Brand Logo -->
             <div class="brand-logo">
                 <a href="#home">
                     <span class="logo-icon">🚀</span>
@@ -21,7 +18,6 @@
                 </a>
             </div>
 
-            <!-- Primary Navigation Links -->
             <nav id="primary-nav">
                 <ul class="nav-menu">
                     <li class="nav-item"><a href="#dashboard" class="nav-link active">Dashboard</a></li>
@@ -33,24 +29,23 @@
                 </ul>
             </nav>
 
-            <!-- Search & User Controls -->
             <div class="header-actions">
                 <div class="search-box">
-                    <form action="#" method="GET">
-                        <input type="text" name="query" placeholder="Search anything..." aria-label="Search">
+                    <form id="search-form" action="#" method="GET">
+                        <input type="text" id="search-input" name="query" placeholder="Search anything..." aria-label="Search">
                         <button type="submit" aria-label="Submit Search">🔍</button>
                     </form>
                 </div>
 
                 <div class="notification-dropdown">
                     <button id="notif-btn" class="icon-btn" aria-label="Notifications">
-                        🔔 <span class="badge">5</span>
+                        🔔 <span class="badge" id="notif-count">3</span>
                     </button>
                 </div>
 
                 <div class="user-profile-menu">
                     <button id="user-menu-btn" class="profile-btn">
-                        <span class="avatar">JS</span>
+                        <span class="avatar">JD</span>
                         <span class="user-name">John Doe</span>
                     </button>
                 </div>
@@ -58,9 +53,7 @@
         </div>
     </header>
 
-    <!-- ========================================== -->
-    <!-- MAIN CONTENT LAYOUT WITH SIDEBAR           -->
-    <!-- ========================================== -->
+    <!-- Main Application Body -->
     <div class="app-container">
 
         <!-- Sidebar Navigation -->
@@ -69,112 +62,108 @@
                 <div class="sidebar-section">
                     <p class="sidebar-title">CORE NAVIGATION</p>
                     <ul class="sidebar-menu">
-                        <li><a href="#overview"><span>📊</span> Overview</a></li>
-                        <li><a href="#reports"><span>📈</span> Reports & Metrics</a></li>
-                        <li><a href="#users"><span>👥</span> User Management</a></li>
-                        <li><a href="#billing"><span>💳</span> Billing & Invoices</a></li>
+                        <li><a href="#overview" class="sidebar-link active"><span>📊</span> Overview</a></li>
+                        <li><a href="#reports" class="sidebar-link"><span>📈</span> Reports & Metrics</a></li>
+                        <li><a href="#users" class="sidebar-link"><span>👥</span> User Management</a></li>
+                        <li><a href="#billing" class="sidebar-link"><span>💳</span> Billing & Invoices</a></li>
                     </ul>
                 </div>
 
                 <div class="sidebar-section">
-                    <p class="sidebar-title">PREFERENCES & SETTINGS</p>
+                    <p class="sidebar-title">SETTINGS & TOOLS</p>
                     <ul class="sidebar-menu">
-                        <li><a href="#account"><span>⚙️</span> Account Settings</a></li>
-                        <li><a href="#security"><span>🔒</span> Security & Logs</a></li>
-                        <li><a href="#integrations"><span>🔌</span> Integrations</a></li>
-                        <li><a href="#help"><span>❓</span> Help Center</a></li>
+                        <li><a href="#account" class="sidebar-link"><span>⚙️</span> Account Settings</a></li>
+                        <li><a href="#security" class="sidebar-link"><span>🔒</span> Security Logs</a></li>
+                        <li><a href="#integrations" class="sidebar-link"><span>🔌</span> Integrations</a></li>
+                        <li><a href="#help" class="sidebar-link"><span>❓</span> Support Center</a></li>
                     </ul>
                 </div>
             </div>
         </aside>
 
-        <!-- Main Body Wrapper -->
+        <!-- Dynamic Main Content Area -->
         <main id="main-content">
 
-            <!-- HERO / WELCOME BANNER -->
+            <!-- Welcome / Hero Section -->
             <section id="hero-banner" class="content-section">
                 <div class="banner-wrapper">
                     <h1>Welcome back, John! 👋</h1>
-                    <p>Here is what is happening with your projects and active systems today.</p>
+                    <p>Here is your current operational metrics and system activity performance.</p>
                     <div class="cta-actions">
-                        <button type="button" class="btn btn-primary" id="btn-create-project">+ Create New Project</button>
-                        <button type="button" class="btn btn-secondary" id="btn-export-report">📥 Export Full Report</button>
+                        <button type="button" class="btn btn-primary" id="btn-create-project">+ New Project</button>
+                        <button type="button" class="btn btn-secondary" id="btn-export-report">📥 Export Report</button>
                     </div>
                 </div>
             </section>
 
-            <!-- STATS / KPI CARDS GRID -->
+            <!-- KPI Summary Cards -->
             <section id="kpi-metrics" class="content-section">
-                <h2>Key Performance Indicators</h2>
+                <h2>Key Performance Metrics</h2>
                 <div class="grid-container grid-4">
                     
-                    <!-- KPI Card 1 -->
                     <div class="card stat-card">
                         <div class="card-header">
                             <span class="stat-title">Total Revenue</span>
                             <span class="stat-icon">💰</span>
                         </div>
                         <div class="card-body">
-                            <p class="stat-value">$124,500.00</p>
+                            <p class="stat-value" id="val-revenue">$124,500.00</p>
                             <span class="stat-trend positive">↑ 12.5% vs last month</span>
                         </div>
                     </div>
 
-                    <!-- KPI Card 2 -->
                     <div class="card stat-card">
                         <div class="card-header">
                             <span class="stat-title">Active Users</span>
-                            <span class="stat-icon">⚡</span>
+                            <span class="stat-icon">👥</span>
                         </div>
                         <div class="card-body">
-                            <p class="stat-value">18,420</p>
+                            <p class="stat-value" id="val-users">18,420</p>
                             <span class="stat-trend positive">↑ 8.1% new signups</span>
                         </div>
                     </div>
 
-                    <!-- KPI Card 3 -->
                     <div class="card stat-card">
                         <div class="card-header">
                             <span class="stat-title">System Load</span>
-                            <span class="stat-icon">🖥️</span>
+                            <span class="stat-icon">⚡</span>
                         </div>
                         <div class="card-body">
-                            <p class="stat-value">42.8%</p>
-                            <span class="stat-trend neutral">→ Stable performance</span>
+                            <p class="stat-value" id="val-load">42.8%</p>
+                            <span class="stat-trend neutral">→ Normal limits</span>
                         </div>
                     </div>
 
-                    <!-- KPI Card 4 -->
                     <div class="card stat-card">
                         <div class="card-header">
-                            <span class="stat-title">Open Support Tickets</span>
+                            <span class="stat-title">Open Tickets</span>
                             <span class="stat-icon">🎫</span>
                         </div>
                         <div class="card-body">
-                            <p class="stat-value">14</p>
-                            <span class="stat-trend negative">↓ 3 critical pending</span>
+                            <p class="stat-value" id="val-tickets">14</p>
+                            <span class="stat-trend negative">↓ 3 critical tickets</span>
                         </div>
                     </div>
 
                 </div>
             </section>
 
-            <!-- DATA TABLE SECTION -->
+            <!-- Data Table Section -->
             <section id="data-management" class="content-section">
                 <div class="section-header">
-                    <h2>Recent Transactions & Orders</h2>
+                    <h2>Recent Transactions</h2>
                     <div class="table-filters">
                         <select name="status-filter" id="status-filter">
                             <option value="all">All Statuses</option>
-                            <option value="completed">Completed</option>
-                            <option value="pending">Pending</option>
-                            <option value="failed">Failed</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Failed">Failed</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="table-wrapper">
-                    <table class="data-table">
+                    <table class="data-table" id="transactions-table">
                         <thead>
                             <tr>
                                 <th><input type="checkbox" id="select-all"></th>
@@ -186,40 +175,40 @@
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="table-body">
                             <tr>
-                                <td><input type="checkbox" name="row-select"></td>
+                                <td><input type="checkbox" class="row-select"></td>
                                 <td>#INV-2026-001</td>
                                 <td>Alexander Wright</td>
                                 <td>Jul 22, 2026</td>
                                 <td>$1,250.00</td>
                                 <td><span class="badge status-success">Completed</span></td>
                                 <td>
-                                    <button class="action-btn edit-btn">View</button>
+                                    <button class="action-btn view-btn">View</button>
                                     <button class="action-btn delete-btn">Delete</button>
                                 </td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="row-select"></td>
+                                <td><input type="checkbox" class="row-select"></td>
                                 <td>#INV-2026-002</td>
                                 <td>Sophia Martinez</td>
                                 <td>Jul 21, 2026</td>
                                 <td>$450.00</td>
                                 <td><span class="badge status-warning">Pending</span></td>
                                 <td>
-                                    <button class="action-btn edit-btn">View</button>
+                                    <button class="action-btn view-btn">View</button>
                                     <button class="action-btn delete-btn">Delete</button>
                                 </td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox" name="row-select"></td>
+                                <td><input type="checkbox" class="row-select"></td>
                                 <td>#INV-2026-003</td>
                                 <td>Liam O'Connor</td>
                                 <td>Jul 20, 2026</td>
                                 <td>$2,890.00</td>
                                 <td><span class="badge status-danger">Failed</span></td>
                                 <td>
-                                    <button class="action-btn edit-btn">View</button>
+                                    <button class="action-btn view-btn">View</button>
                                     <button class="action-btn delete-btn">Delete</button>
                                 </td>
                             </tr>
@@ -227,26 +216,17 @@
                     </table>
                 </div>
 
-                <!-- Pagination -->
                 <div class="pagination-container">
-                    <p>Showing 1 to 3 of 50 entries</p>
-                    <div class="pagination-controls">
-                        <button disabled>Previous</button>
-                        <button class="active">1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>Next</button>
-                    </div>
+                    <p id="pagination-info">Showing 3 entries</p>
                 </div>
             </section>
 
-            <!-- SETTINGS & INPUT FORM SECTION -->
+            <!-- Form Section -->
             <section id="account-form-section" class="content-section">
-                <h2>Account Settings & Preferences</h2>
+                <h2>Account Settings</h2>
                 <form id="settings-form" action="#" method="POST">
                     
                     <div class="form-grid">
-                        <!-- Personal Info -->
                         <div class="form-group">
                             <label for="first-name">First Name</label>
                             <input type="text" id="first-name" name="first_name" value="John" required>
@@ -268,8 +248,8 @@
                         </div>
 
                         <div class="form-group full-width">
-                            <label for="user-bio">Bio / Short Description</label>
-                            <textarea id="user-bio" name="bio" rows="4">Senior Product Manager with over 8 years of experience in leading engineering teams.</textarea>
+                            <label for="user-bio">Bio / Professional Summary</label>
+                            <textarea id="user-bio" name="bio" rows="4">Senior Product Lead specializing in scalable backend systems and UX design.</textarea>
                         </div>
 
                         <div class="form-group">
@@ -281,16 +261,16 @@
                             </select>
                         </div>
 
-                        <div class="form-group checkbox-group">
+                        <div class="form-group checkbox-group full-width">
                             <label>
-                                <input type="checkbox" name="email_notifications" checked> Receive email alerts for system updates
+                                <input type="checkbox" id="email-notifs" name="email_notifications" checked> Receive system status email notifications
                             </label>
                         </div>
                     </div>
 
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">Save Settings</button>
-                        <button type="reset" class="btn btn-secondary">Reset Changes</button>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <button type="reset" class="btn btn-secondary">Reset Form</button>
                     </div>
 
                 </form>
@@ -299,33 +279,29 @@
         </main>
     </div>
 
-    <!-- ========================================== -->
-    <!-- MODALS & OVERLAYS                          -->
-    <!-- ========================================== -->
+    <!-- Modal Popup Box -->
     <div id="modal-backdrop" class="modal-backdrop hidden">
         <div class="modal-dialog">
             <div class="modal-header">
-                <h3>Confirm Action</h3>
+                <h3 id="modal-title">Confirmation Required</h3>
                 <button id="close-modal-btn" class="close-btn">&times;</button>
             </div>
             <div class="modal-body">
-                <p>Are you sure you want to proceed with this operation? This action cannot be undone.</p>
+                <p id="modal-message">Are you sure you want to perform this action? This operation cannot be reversed.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" id="modal-cancel">Cancel</button>
-                <button type="button" class="btn btn-danger" id="modal-confirm">Confirm Delete</button>
+                <button type="button" class="btn btn-secondary" id="modal-cancel-btn">Cancel</button>
+                <button type="button" class="btn btn-danger" id="modal-confirm-btn">Confirm</button>
             </div>
         </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- FOOTER SECTION                             -->
-    <!-- ========================================== -->
+    <!-- Footer -->
     <footer id="main-footer">
         <div class="footer-container">
             <div class="footer-column">
                 <h4>EnterpriseApp</h4>
-                <p>Empowering businesses with modern management tools and data intelligence.</p>
+                <p>Modern management tools built for high-scale teams and businesses.</p>
             </div>
             <div class="footer-column">
                 <h4>Quick Links</h4>
@@ -340,7 +316,7 @@
                 <ul>
                     <li><a href="#privacy">Privacy Policy</a></li>
                     <li><a href="#terms">Terms of Service</a></li>
-                    <li><a href="#security">Security Overview</a></li>
+                    <li><a href="#security">Security</a></li>
                 </ul>
             </div>
         </div>
