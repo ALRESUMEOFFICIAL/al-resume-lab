@@ -708,3 +708,8 @@ document.addEventListener(
 /*====================================
 END OF FILE
 ====================================*/
+if (window.innerWidth <= 768) {
+  document.querySelectorAll(
+    '.cursor-dot, .cursor-outline, .click-dot'
+  ).forEach(el => el.remove());
+}
