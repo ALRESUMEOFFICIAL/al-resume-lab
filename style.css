@@ -2282,3 +2282,12 @@ html, body {
     }
 
 }
+/* Remove custom cursor dot on mobile */
+@media (max-width: 768px) {
+  .cursor-dot,
+  .cursor-outline,
+  .custom-cursor,
+  .click-dot {
+    display: none !important;
+  }
+}
