@@ -2,48 +2,48 @@
 AL RESUME LAB
 SCRIPT.JS
 PART 1
-Loader • Sticky Header • Scroll Progress
+Loader • Header • Navigation • Scroll
 ==================================================*/
 
 "use strict";
 
-/*==========================
+/*==============================
 ELEMENTS
-==========================*/
+==============================*/
 
 const loader = document.querySelector(".loader");
-
 const header = document.querySelector(".header");
-
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+const navItems = document.querySelectorAll(".nav-links a");
 const scrollProgress = document.querySelector(".scroll-progress");
+const backTop = document.querySelector(".back-top");
 
-/*==========================
-WINDOW LOAD
-==========================*/
+/*==============================
+PAGE LOADER
+==============================*/
 
 window.addEventListener("load", () => {
 
+    if (!loader) return;
+
     setTimeout(() => {
 
-        if (loader) {
+        loader.classList.add("hidden");
 
-            loader.classList.add("hidden");
-
-        }
-
-    }, 700);
+    }, 500);
 
 });
 
-/*==========================
+/*==============================
 STICKY HEADER
-==========================*/
+==============================*/
 
-function stickyHeader() {
+function updateHeader() {
 
     if (!header) return;
 
-    if (window.scrollY > 80) {
+    if (window.scrollY > 60) {
 
         header.classList.add("scrolled");
 
@@ -55,226 +55,29 @@ function stickyHeader() {
 
 }
 
-window.addEventListener("scroll", stickyHeader);
+/*==============================
+SCROLL PROGRESS
+==============================*/
 
-/*==========================
-SCROLL PROGRESS BAR
-==========================*/
-
-function updateScrollProgress() {
+function updateProgress() {
 
     if (!scrollProgress) return;
 
-    const scrollTop = window.scrollY;
-
-    const pageHeight =
+    const totalHeight =
         document.documentElement.scrollHeight -
         window.innerHeight;
 
     const progress =
-        (scrollTop / pageHeight) * 100;
+        (window.scrollY / totalHeight) * 100;
 
     scrollProgress.style.width =
         progress + "%";
 
 }
 
-window.addEventListener(
-    "scroll",
-    updateScrollProgress
-);
-
-/*==========================
-INITIALIZE
-==========================*/
-
-stickyHeader();
-
-updateScrollProgress();
-/*==================================================
-AL RESUME LAB
-SCRIPT.JS
-PART 2
-Mobile Menu • Theme Toggle
-==================================================*/
-
-"use strict";
-
-/*==========================
-ELEMENTS
-==========================*/
-
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-const navItems = document.querySelectorAll(".nav-links a");
-
-const themeBtn = document.querySelector(".theme-btn");
-const themeIcon = document.querySelector(".theme-btn i");
-
-/*==========================
-MOBILE MENU
-==========================*/
-
-if (menuToggle && navLinks) {
-
-    menuToggle.addEventListener("click", () => {
-
-        navLinks.classList.toggle("active");
-
-        const icon = menuToggle.querySelector("i");
-
-        if (navLinks.classList.contains("active")) {
-
-            icon.classList.remove("ri-menu-3-line");
-            icon.classList.add("ri-close-line");
-
-        } else {
-
-            icon.classList.remove("ri-close-line");
-            icon.classList.add("ri-menu-3-line");
-
-        }
-
-    });
-
-}
-
-/*==========================
-CLOSE MENU AFTER CLICK
-==========================*/
-
-navItems.forEach((item) => {
-
-    item.addEventListener("click", () => {
-
-        navLinks.classList.remove("active");
-
-        const icon = menuToggle.querySelector("i");
-
-        icon.classList.remove("ri-close-line");
-        icon.classList.add("ri-menu-3-line");
-
-    });
-
-});
-
-/*==========================
-THEME TOGGLE
-==========================*/
-
-const savedTheme = localStorage.getItem("al-theme");
-
-if (savedTheme === "light") {
-
-    document.body.classList.add("light-theme");
-
-    if (themeIcon) {
-
-        themeIcon.classList.remove("ri-moon-line");
-        themeIcon.classList.add("ri-sun-line");
-
-    }
-
-}
-
-if (themeBtn) {
-
-    themeBtn.addEventListener("click", () => {
-
-        document.body.classList.toggle("light-theme");
-
-        const isLight =
-            document.body.classList.contains("light-theme");
-
-        if (isLight) {
-
-            localStorage.setItem("al-theme", "light");
-
-            themeIcon.classList.remove("ri-moon-line");
-            themeIcon.classList.add("ri-sun-line");
-
-        } else {
-
-            localStorage.setItem("al-theme", "dark");
-
-            themeIcon.classList.remove("ri-sun-line");
-            themeIcon.classList.add("ri-moon-line");
-
-        }
-
-    });
-
-}
-
-/*==========================
-ESC KEY CLOSE MENU
-==========================*/
-
-document.addEventListener("keydown", (e) => {
-
-    if (e.key === "Escape") {
-
-        navLinks.classList.remove("active");
-
-        const icon = menuToggle?.querySelector("i");
-
-        if (icon) {
-
-            icon.classList.remove("ri-close-line");
-            icon.classList.add("ri-menu-3-line");
-
-        }
-
-    }
-
-});
-/*==================================================
-AL RESUME LAB
-SCRIPT.JS
-PART 3
-FAQ Accordion • Back To Top
-==================================================*/
-
-"use strict";
-
-/*==========================
-ELEMENTS
-==========================*/
-
-const faqItems = document.querySelectorAll(".faq-item");
-const faqButtons = document.querySelectorAll(".faq-question");
-
-const backTop = document.querySelector(".back-top");
-
-/*==========================
-FAQ ACCORDION
-==========================*/
-
-faqButtons.forEach((button) => {
-
-    button.addEventListener("click", () => {
-
-        const currentItem = button.parentElement;
-
-        faqItems.forEach((item) => {
-
-            if (item !== currentItem) {
-
-                item.classList.remove("active");
-
-            }
-
-        });
-
-        currentItem.classList.toggle("active");
-
-    });
-
-});
-
-/*==========================
-BACK TO TOP BUTTON
-==========================*/
+/*==============================
+BACK TO TOP
+==============================*/
 
 function toggleBackTop() {
 
@@ -292,21 +95,15 @@ function toggleBackTop() {
 
 }
 
-window.addEventListener("scroll", toggleBackTop);
-
-/*==========================
-BACK TO TOP CLICK
-==========================*/
-
 if (backTop) {
 
     backTop.addEventListener("click", () => {
 
         window.scrollTo({
 
-            top: 0,
+            top:0,
 
-            behavior: "smooth"
+            behavior:"smooth"
 
         });
 
@@ -314,36 +111,104 @@ if (backTop) {
 
 }
 
-/*==========================
-SMOOTH SECTION LINKS
-==========================*/
+/*==============================
+MOBILE MENU
+==============================*/
 
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
+if (menuToggle && navLinks) {
 
-    link.addEventListener("click", (e) => {
+    menuToggle.addEventListener("click", () => {
 
-        const targetId = link.getAttribute("href");
+        navLinks.classList.toggle("active");
 
-        if (!targetId || targetId === "#") return;
+        menuToggle.classList.toggle("active");
 
-        const target = document.querySelector(targetId);
+    });
 
-        if (!target) return;
+}
+
+/*==============================
+CLOSE MENU
+==============================*/
+
+navItems.forEach((item)=>{
+
+    item.addEventListener("click",()=>{
+
+        navLinks?.classList.remove("active");
+
+        menuToggle?.classList.remove("active");
+
+    });
+
+});
+
+/*==============================
+CLICK OUTSIDE MENU
+==============================*/
+
+document.addEventListener("click",(e)=>{
+
+    if(
+        !navLinks ||
+        !menuToggle
+    ) return;
+
+    if(
+        !navLinks.contains(e.target) &&
+        !menuToggle.contains(e.target)
+    ){
+
+        navLinks.classList.remove("active");
+
+        menuToggle.classList.remove("active");
+
+    }
+
+});
+
+/*==============================
+ESC KEY
+==============================*/
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key==="Escape"){
+
+        navLinks?.classList.remove("active");
+
+        menuToggle?.classList.remove("active");
+
+    }
+
+});
+
+/*==============================
+SMOOTH SCROLL
+==============================*/
+
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+
+    link.addEventListener("click",(e)=>{
+
+        const id=link.getAttribute("href");
+
+        if(id==="#" || !document.querySelector(id))
+            return;
 
         e.preventDefault();
 
-        const headerHeight = document.querySelector(".header")?.offsetHeight || 0;
+        const target=document.querySelector(id);
 
-        const topPosition =
-            target.getBoundingClientRect().top +
-            window.pageYOffset -
-            headerHeight;
+        const top=
+        target.offsetTop-
+        80;
 
         window.scrollTo({
 
-            top: topPosition,
+            top,
 
-            behavior: "smooth"
+            behavior:"smooth"
 
         });
 
@@ -351,451 +216,288 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
 });
 
-/*==========================
-INITIALIZE
-==========================*/
+/*==============================
+SCROLL EVENTS
+==============================*/
+
+window.addEventListener("scroll",()=>{
+
+    updateHeader();
+
+    updateProgress();
+
+    toggleBackTop();
+
+});
+
+/*==============================
+INIT
+==============================*/
+
+updateHeader();
+
+updateProgress();
 
 toggleBackTop();
+
 /*==================================================
 AL RESUME LAB
 SCRIPT.JS
-PART 4
-Custom Cursor • Scroll Reveal • Floating Effects
+PART 2
+FAQ • Reveal Animation • Counters • Progress Bars
 ==================================================*/
 
 "use strict";
 
-/*==========================
-ELEMENTS
-==========================*/
+/*====================================
+FAQ ACCORDION
+====================================*/
 
-const cursor = document.querySelector(".cursor");
-const cursorBlur = document.querySelector(".cursor-blur");
+const faqItems = document.querySelectorAll(".faq-item");
 
-/*==========================
-CUSTOM CURSOR
-==========================*/
+faqItems.forEach((item) => {
 
-if (cursor && cursorBlur) {
+    const button = item.querySelector(".faq-question");
 
-    window.addEventListener("mousemove", (e) => {
+    button?.addEventListener("click", () => {
 
-        const x = e.clientX;
-        const y = e.clientY;
+        faqItems.forEach((faq) => {
 
-        cursor.style.left = `${x}px`;
-        cursor.style.top = `${y}px`;
+            if (faq !== item) {
 
-        cursorBlur.style.left = `${x - 80}px`;
-        cursorBlur.style.top = `${y - 80}px`;
+                faq.classList.remove("active");
 
-    });
+            }
 
-}
+        });
 
-/*==========================
-CURSOR HOVER EFFECT
-==========================*/
-
-const hoverElements = document.querySelectorAll(
-    "a, button, .feature-card, .pricing-card, .testimonial-card"
-);
-
-hoverElements.forEach((element) => {
-
-    element.addEventListener("mouseenter", () => {
-
-        if (!cursor || !cursorBlur) return;
-
-        cursor.style.transform = "scale(1.8)";
-        cursorBlur.style.transform = "scale(1.25)";
-
-    });
-
-    element.addEventListener("mouseleave", () => {
-
-        if (!cursor || !cursorBlur) return;
-
-        cursor.style.transform = "scale(1)";
-        cursorBlur.style.transform = "scale(1)";
+        item.classList.toggle("active");
 
     });
 
 });
 
-/*==========================
+/*====================================
 SCROLL REVEAL
-==========================*/
+====================================*/
 
-const revealElements = document.querySelectorAll(
-    "section, .feature-card, .pricing-card, .testimonial-card, .stat-box"
+const revealItems = document.querySelectorAll(
+
+".fade-up,.feature-card,.pricing-card,.testimonial-card,.stat-card,.resume-window,.trusted-logos,.section-header"
+
 );
 
 const revealObserver = new IntersectionObserver(
 
-    (entries) => {
+(entries)=>{
 
-        entries.forEach((entry) => {
+entries.forEach((entry)=>{
 
-            if (entry.isIntersecting) {
+if(entry.isIntersecting){
 
-                entry.target.classList.add("show");
+entry.target.classList.add("show");
 
-            }
-
-        });
-
-    },
-
-    {
-        threshold: 0.15
-    }
-
-);
-
-revealElements.forEach((element) => {
-
-    element.classList.add("fade-up");
-
-    revealObserver.observe(element);
-
-});
-
-/*==========================
-FLOATING ANIMATION
-==========================*/
-
-const floatingCards = document.querySelectorAll(".floating-card");
-
-window.addEventListener("mousemove", (e) => {
-
-    const moveX = (e.clientX / window.innerWidth - 0.5) * 20;
-    const moveY = (e.clientY / window.innerHeight - 0.5) * 20;
-
-    floatingCards.forEach((card, index) => {
-
-        const speed = (index + 1) * 0.6;
-
-        card.style.transform =
-            `translate(${moveX * speed}px, ${moveY * speed}px)`;
-
-    });
-
-});
-
-/*==========================
-PARALLAX HERO
-==========================*/
-
-const heroImage = document.querySelector(".hero-image");
-
-window.addEventListener("scroll", () => {
-
-    if (!heroImage) return;
-
-    const offset = window.scrollY * 0.12;
-
-    heroImage.style.transform = `translateY(${offset}px)`;
-
-});
-/*==================================================
-AL RESUME LAB
-SCRIPT.JS
-PART 5
-Counters • Progress Bars • Interactive Effects
-==================================================*/
-
-"use strict";
-
-/*==========================
-ANIMATED COUNTERS
-==========================*/
-
-const counterElements = document.querySelectorAll(
-    ".stat-card h2, .stat-box h2"
-);
-
-function animateCounter(element) {
-
-    const text = element.textContent.trim();
-
-    const number = parseInt(text.replace(/\D/g, ""), 10);
-
-    if (!number || element.dataset.done) return;
-
-    element.dataset.done = "true";
-
-    const suffix = text.replace(/[0-9]/g, "");
-
-    let current = 0;
-
-    const increment = Math.max(1, Math.ceil(number / 80));
-
-    const timer = setInterval(() => {
-
-        current += increment;
-
-        if (current >= number) {
-
-            current = number;
-
-            clearInterval(timer);
-
-        }
-
-        element.textContent = current + suffix;
-
-    }, 20);
+revealObserver.unobserve(entry.target);
 
 }
 
-const counterObserver = new IntersectionObserver(
+});
 
-    (entries) => {
+},
 
-        entries.forEach((entry) => {
+{
 
-            if (entry.isIntersecting) {
+threshold:0.15
 
-                animateCounter(entry.target);
-
-            }
-
-        });
-
-    },
-
-    {
-        threshold: 0.5
-    }
+}
 
 );
 
-counterElements.forEach((counter) => {
+revealItems.forEach((item)=>{
 
-    counterObserver.observe(counter);
+item.classList.add("fade-up");
+
+revealObserver.observe(item);
 
 });
 
-/*==========================
-PROGRESS BAR ANIMATION
-==========================*/
+/*====================================
+COUNTER ANIMATION
+====================================*/
 
-const progressBars = document.querySelectorAll(".fill");
+const counters=document.querySelectorAll(
 
-const progressObserver = new IntersectionObserver(
-
-    (entries) => {
-
-        entries.forEach((entry) => {
-
-            if (!entry.isIntersecting) return;
-
-            const bar = entry.target;
-
-            const finalWidth = bar.classList.contains("w95") ? "95%" :
-                               bar.classList.contains("w92") ? "92%" :
-                               bar.classList.contains("w90") ? "90%" :
-                               bar.classList.contains("w96") ? "96%" :
-                               "100%";
-
-            bar.style.width = "0%";
-
-            requestAnimationFrame(() => {
-
-                bar.style.transition = "width 1.6s ease";
-
-                bar.style.width = finalWidth;
-
-            });
-
-        });
-
-    },
-
-    {
-        threshold: 0.35
-    }
+".stat-card h2,.stat-box h2"
 
 );
 
-progressBars.forEach((bar) => {
+const counterObserver=new IntersectionObserver(
 
-    progressObserver.observe(bar);
+(entries)=>{
 
-});
+entries.forEach((entry)=>{
 
-/*==========================
-BUTTON RIPPLE EFFECT
-==========================*/
+if(!entry.isIntersecting) return;
 
-const buttons = document.querySelectorAll(
-    ".primary-btn, .secondary-btn"
+const element=entry.target;
+
+const value=parseInt(
+
+element.textContent.replace(/\D/g,"")
+
 );
 
-buttons.forEach((button) => {
+const suffix=element.textContent.replace(/[0-9]/g,"");
 
-    button.addEventListener("click", (event) => {
+let current=0;
 
-        const ripple = document.createElement("span");
+const speed=Math.ceil(value/80);
 
-        const rect = button.getBoundingClientRect();
+const timer=setInterval(()=>{
 
-        const size = Math.max(rect.width, rect.height);
+current+=speed;
 
-        ripple.style.width = size + "px";
-        ripple.style.height = size + "px";
+if(current>=value){
 
-        ripple.style.left =
-            event.clientX - rect.left - size / 2 + "px";
+current=value;
 
-        ripple.style.top =
-            event.clientY - rect.top - size / 2 + "px";
+clearInterval(timer);
 
-        ripple.className = "ripple";
+}
 
-        button.appendChild(ripple);
+element.textContent=current+suffix;
 
-        setTimeout(() => {
+},20);
 
-            ripple.remove();
-
-        }, 600);
-
-    });
+counterObserver.unobserve(element);
 
 });
 
-/*==========================
+},
+
+{
+
+threshold:.5
+
+}
+
+);
+
+counters.forEach(counter=>{
+
+counterObserver.observe(counter);
+
+});
+
+/*====================================
+ATS PROGRESS BAR
+====================================*/
+
+const progressBars=document.querySelectorAll(".fill");
+
+const progressObserver=new IntersectionObserver(
+
+(entries)=>{
+
+entries.forEach((entry)=>{
+
+if(!entry.isIntersecting) return;
+
+const bar=entry.target;
+
+const width=bar.dataset.width || "90%";
+
+bar.style.width="0";
+
+setTimeout(()=>{
+
+bar.style.transition="width 1.5s ease";
+
+bar.style.width=width;
+
+},100);
+
+progressObserver.unobserve(bar);
+
+});
+
+});
+
+progressBars.forEach(bar=>{
+
+progressObserver.observe(bar);
+
+});
+
+/*====================================
 CARD HOVER EFFECT
-==========================*/
+====================================*/
 
-const cards = document.querySelectorAll(
-    ".feature-card, .pricing-card, .testimonial-card"
+const cards=document.querySelectorAll(
+
+".feature-card,.pricing-card,.testimonial-card"
+
 );
 
-cards.forEach((card) => {
+cards.forEach((card)=>{
 
-    card.addEventListener("mousemove", (e) => {
+card.addEventListener("mousemove",(e)=>{
 
-        const rect = card.getBoundingClientRect();
+const rect=card.getBoundingClientRect();
 
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+const x=e.clientX-rect.left;
 
-        card.style.setProperty("--x", `${x}px`);
-        card.style.setProperty("--y", `${y}px`);
+const y=e.clientY-rect.top;
 
-    });
+card.style.setProperty("--mouse-x",x+"px");
+
+card.style.setProperty("--mouse-y",y+"px");
 
 });
+
+});
+
+/*====================================
+BUTTON ANIMATION
+====================================*/
+
+document.querySelectorAll(
+
+".primary-btn,.secondary-btn"
+
+).forEach((btn)=>{
+
+btn.addEventListener("mouseenter",()=>{
+
+btn.style.transform="translateY(-4px)";
+
+});
+
+btn.addEventListener("mouseleave",()=>{
+
+btn.style.transform="translateY(0)";
+
+});
+
+});
+
+/*====================================
+END PART 2
+====================================*/
+
 /*==================================================
 AL RESUME LAB
 SCRIPT.JS
-PART 6
-Final Initialization • Utilities • Performance
+PART 3
+Final Optimization • Forms • Lazy Load •
+Performance • Initialization
 ==================================================*/
 
 "use strict";
 
-/*==========================
-PREVENT MULTIPLE SUBMITS
-==========================*/
-
-document.querySelectorAll("form").forEach((form) => {
-
-    form.addEventListener("submit", (e) => {
-
-        e.preventDefault();
-
-        const submitBtn =
-            form.querySelector('button[type="submit"]');
-
-        if (!submitBtn) return;
-
-        submitBtn.disabled = true;
-
-        const oldText = submitBtn.innerHTML;
-
-        submitBtn.innerHTML =
-            '<i class="ri-loader-4-line"></i> Processing...';
-
-        setTimeout(() => {
-
-            submitBtn.disabled = false;
-
-            submitBtn.innerHTML = oldText;
-
-        }, 1800);
-
-    });
-
-});
-
-/*==========================
-WINDOW RESIZE
-==========================*/
-
-window.addEventListener("resize", () => {
-
-    if (window.innerWidth > 991) {
-
-        const nav = document.querySelector(".nav-links");
-
-        if (nav) {
-
-            nav.classList.remove("active");
-
-        }
-
-    }
-
-});
-
-/*==========================
-KEYBOARD SHORTCUT
-==========================*/
-
-document.addEventListener("keydown", (event) => {
-
-    /* Press "/" to search (future feature) */
-
-    if (
-        event.key === "/" &&
-        !["INPUT", "TEXTAREA"].includes(
-            document.activeElement.tagName
-        )
-    ) {
-
-        event.preventDefault();
-
-        console.log("Search feature coming soon.");
-
-    }
-
-});
-
-/*==========================
-PAGE VISIBILITY
-==========================*/
-
-document.addEventListener("visibilitychange", () => {
-
-    if (document.hidden) {
-
-        console.log("AL Resume Lab paused.");
-
-    } else {
-
-        console.log("Welcome back!");
-
-    }
-
-});
-
-/*==========================
-LAZY IMAGE SUPPORT
-==========================*/
+/*====================================
+LAZY IMAGE LOADING
+====================================*/
 
 const lazyImages = document.querySelectorAll("img[data-src]");
 
@@ -809,16 +511,22 @@ if ("IntersectionObserver" in window) {
 
                 if (!entry.isIntersecting) return;
 
-                const img = entry.target;
+                const image = entry.target;
 
-                img.src = img.dataset.src;
+                image.src = image.dataset.src;
 
-                img.removeAttribute("data-src");
+                image.removeAttribute("data-src");
 
-                observer.unobserve(img);
+                image.classList.add("loaded");
+
+                observer.unobserve(image);
 
             });
 
+        },
+
+        {
+            threshold: 0.1
         }
 
     );
@@ -831,33 +539,172 @@ if ("IntersectionObserver" in window) {
 
 }
 
-/*==========================
-CONSOLE MESSAGE
-==========================*/
+/*====================================
+FORM HANDLING
+====================================*/
 
-console.log(`
-====================================
-        AL RESUME LAB
- AI-Powered Resume & ATS Checker
-====================================
+const forms = document.querySelectorAll("form");
 
-Website Initialized Successfully.
-Version: 1.0
-Status : Ready
-`);
+forms.forEach((form) => {
 
-/*==========================
-INITIALIZATION
-==========================*/
+    form.addEventListener("submit", (e) => {
 
-document.addEventListener("DOMContentLoaded", () => {
+        e.preventDefault();
 
-    document.body.classList.add("loaded");
+        const submitButton = form.querySelector(
+            'button[type="submit"]'
+        );
 
-    console.log("All components initialized.");
+        if (!submitButton) return;
+
+        const originalText = submitButton.innerHTML;
+
+        submitButton.disabled = true;
+
+        submitButton.innerHTML =
+            '<i class="ri-loader-4-line ri-spin"></i> Please Wait...';
+
+        setTimeout(() => {
+
+            submitButton.disabled = false;
+
+            submitButton.innerHTML = originalText;
+
+        }, 1800);
+
+    });
 
 });
 
-/*==========================
+/*====================================
+WINDOW RESIZE
+====================================*/
+
+window.addEventListener("resize", () => {
+
+    if (window.innerWidth > 991) {
+
+        navLinks?.classList.remove("active");
+
+        menuToggle?.classList.remove("active");
+
+    }
+
+});
+
+/*====================================
+PAGE VISIBILITY
+====================================*/
+
+document.addEventListener("visibilitychange", () => {
+
+    if (document.hidden) {
+
+        console.log("Page Hidden");
+
+    } else {
+
+        console.log("Page Active");
+
+    }
+
+});
+
+/*====================================
+DISABLE DRAGGING (OPTIONAL)
+====================================*/
+
+document.querySelectorAll("img").forEach((image) => {
+
+    image.setAttribute("draggable", "false");
+
+});
+
+/*====================================
+PRELOAD ANIMATIONS
+====================================*/
+
+window.addEventListener("load", () => {
+
+    document.body.classList.add("loaded");
+
+});
+
+/*====================================
+SMOOTH PAGE TRANSITION
+====================================*/
+
+document.body.style.opacity = "0";
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        document.body.style.transition =
+            "opacity .4s ease";
+
+        document.body.style.opacity = "1";
+
+    }, 100);
+
+});
+
+/*====================================
+PERFORMANCE
+====================================*/
+
+window.addEventListener(
+
+    "scroll",
+
+    () => {},
+
+    {
+        passive: true
+    }
+
+);
+
+/*====================================
+CONSOLE MESSAGE
+====================================*/
+
+console.log(`
+========================================
+        AL RESUME LAB
+AI-Powered Resume & ATS Checker
+========================================
+
+Status  : Ready
+Version : 2.0
+Mode    : Production
+
+Developed by AL Resume Lab
+========================================
+`);
+
+/*====================================
+INITIALIZE
+====================================*/
+
+function initializeWebsite() {
+
+    updateHeader();
+    updateProgress();
+    toggleBackTop();
+
+    console.log("All Components Loaded Successfully.");
+
+}
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    initializeWebsite
+
+);
+
+/*====================================
 END OF FILE
-==========================*/
+====================================*/
