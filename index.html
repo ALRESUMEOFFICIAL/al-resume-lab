@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AL Resume Lab | Real AI ATS Engine & Qureshi Design Hub</title>
-    <meta name="description" content="Check your ATS score with real AI parsing and get custom ATS-friendly CV designs by Qureshi Design Hub.">
+    <title>AL Resume Lab | Real AI ATS Resume Parser & Qureshi Design Hub</title>
     
+    <!-- SEO & Generative Engine Optimization (GEO) Tags -->
+    <meta name="description" content="AL Resume Lab is an advanced AI-powered ATS resume parser and analyzer. Get your real ATS score, keyword gap analysis, and professional CV redesign by Qureshi Design Hub.">
+    <meta name="keywords" content="ATS resume checker, AI CV scanner, ATS resume builder Pakistan, Qureshi Design Hub, editable CV templates PKR 1000, professional resume redesign">
+    <meta name="author" content="AL Resume Lab & Qureshi Design Hub">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="AL Resume Lab | Real AI ATS Resume Parser">
+    <meta property="og:description" content="Check your ATS score for free or get a professional 100% ATS-compliant CV designed by Qureshi Design Hub.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 
-    <!-- GEO & Generative Engine Schema Markup -->
+    <!-- GEO Structured Data Schema (JSON-LD) for AI Search Engines -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -21,7 +32,7 @@
           "name": "AL Resume Lab",
           "applicationCategory": "BusinessApplication",
           "operatingSystem": "Web",
-          "description": "Real AI-powered ATS resume parser and scoring engine. Provides 5 free checks per login and unlimited checks under Pro Plan.",
+          "description": "Real AI-powered ATS resume parser and scoring engine. Offers 5 free scans per login and unlimited scans on Pro Plan.",
           "offers": {
             "@type": "Offer",
             "price": "5000",
@@ -31,7 +42,7 @@
         {
           "@type": "ProfessionalService",
           "name": "Qureshi Design Hub",
-          "description": "Professional graphic design service specializing in 100% ATS-compliant custom CVs and editable resume templates.",
+          "description": "Expert graphic design agency specializing in 100% ATS-compliant custom CV redesigns and editable resume templates.",
           "telephone": "+923309871122",
           "priceRange": "PKR 1000 - PKR 5000"
         }
@@ -41,268 +52,319 @@
 </head>
 <body>
 
-    <!-- Background Ambient Glow -->
-    <div class="bg-glow-effect"></div>
+    <!-- Ambient Glowing Background Elements -->
+    <div class="bg-glow-orb orb-1"></div>
+    <div class="bg-glow-orb orb-2"></div>
+    <div class="bg-glow-grid"></div>
 
-    <!-- Header / Navbar -->
-    <header class="navbar">
+    <!-- Navigation Bar -->
+    <header class="navbar" id="top-nav">
         <div class="container nav-container">
-            <a href="#" class="logo">
-                <div class="logo-badge">AL</div>
-                <div class="logo-text">
-                    <span class="brand-name">AL Resume Lab</span>
-                    <span class="brand-sub">Powered by Qureshi Design Hub</span>
+            <a href="#" class="brand-logo">
+                <div class="logo-icon-box">
+                    <span>AL</span>
+                </div>
+                <div class="logo-text-box">
+                    <span class="brand-title">AL Resume Lab</span>
+                    <span class="brand-subtitle">Powered by Qureshi Design Hub</span>
                 </div>
             </a>
-            <div class="nav-actions">
-                <a href="#ats-engine" class="btn btn-secondary">Check ATS</a>
-                <a href="https://wa.me/923309871122" target="_blank" class="btn btn-whatsapp-sm">💬 WhatsApp</a>
-                <button onclick="openPaymentModal('pro', 5000)" class="btn btn-primary">Upgrade Pro</button>
+
+            <nav class="nav-links">
+                <a href="#ats-engine" class="nav-item">AI Engine</a>
+                <a href="#designer-consult" class="nav-item">Custom Redesign</a>
+                <a href="#templates" class="nav-item">CV Templates</a>
+                <a href="#pricing" class="nav-item">Pricing</a>
+                <a href="#faq" class="nav-item">FAQ</a>
+            </nav>
+
+            <div class="nav-cta-group">
+                <a href="https://wa.me/923309871122" target="_blank" class="btn btn-whatsapp-sm">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    WhatsApp Support
+                </a>
+                <button onclick="openPaymentModal('Pro Plan Subscription', 5000)" class="btn btn-primary-sm">
+                    Upgrade Pro
+                </button>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- 1. HERO & REAL AI ATS ENGINE -->
-        <section id="ats-engine" class="hero-ats-section">
+        <!-- HERO SECTION & ATS PARSING ENGINE -->
+        <section id="ats-engine" class="hero-section">
             <div class="container text-center">
-                <div class="hero-badge">
-                    <span class="pulse-dot"></span> Real-Time AI ATS Parsing Engine
-                </div>
                 
-                <h1 class="hero-title">
-                    Is Your CV Ready to Pass <span class="text-glow">Real ATS Screening?</span>
+                <div class="pill-badge">
+                    <span class="pulse-dot"></span> Real AI Parser Engine Active
+                </div>
+
+                <h1 class="main-heading">
+                    Will Your Resume Pass <br>
+                    <span class="gradient-text">Corporate ATS Filters?</span>
                 </h1>
-                <p class="hero-subtitle">
-                    Upload your resume for instant AI text parsing, formatting analysis, and keyword scoring.
+                
+                <p class="main-subheading">
+                    Upload your resume (.pdf / .docx) for real-time AI structure analysis, keyword density check, and instant compatibility scoring.
                 </p>
 
-                <!-- ATS Scanner Box -->
-                <div class="ats-scanner-card glass-card-glow">
-                    <div class="scan-limit-badge">
-                        <span>Free Tier: <strong>5 Free ATS Checks</strong> per Email Account</span>
+                <!-- MAIN SCANNER CARD -->
+                <div class="scanner-card-wrapper glass-card-glow">
+                    <div class="scanner-header-bar">
+                        <div class="user-tier-info">
+                            <span class="tier-badge free-tier">Free Account</span>
+                            <span class="scan-count-text">Remaining Scans: <strong id="freeScansLeft">5</strong> / 5</span>
+                        </div>
+                        <a href="javascript:void(0)" onclick="openPaymentModal('Pro Subscription Plan', 5000)" class="get-unlimited-link">Get Unlimited Scans ➔</a>
                     </div>
 
-                    <div class="dropzone-box" id="dropzone">
+                    <!-- DROPZONE -->
+                    <div class="dropzone-area" id="dropzone">
                         <input type="file" id="fileInput" accept=".pdf,.docx" hidden>
-                        <div class="dropzone-content">
-                            <div class="ai-icon-pulse">⚡</div>
-                            <h3>Drag & Drop Your Resume Here</h3>
-                            <p>or <span class="browse-link">Browse Files</span> from device</p>
-                            <span class="file-types">Supports PDF & DOCX Formats</span>
+                        <div class="dropzone-inner" id="dropzoneContent">
+                            <div class="upload-icon-box">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 16.5V3m0 0L7.5 7.5M12 3l4.5 4.5M21 16.5v3a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 19.5v-3"/></svg>
+                            </div>
+                            <h3>Drag & Drop Your Resume File Here</h3>
+                            <p>or <span class="highlight-click">click to browse</span> from your computer or smartphone</p>
+                            <span class="supported-formats">Supported Formats: PDF, DOCX (Max 10MB)</span>
                         </div>
                     </div>
 
-                    <div class="scan-features">
-                        <span>🔒 100% Private & Encrypted</span>
-                        <span>🤖 Deep Text Parser Engine</span>
-                        <span>⚡ Keyword & Header Analysis</span>
+                    <!-- SCANNER FOOTER FEATURES -->
+                    <div class="scanner-features-grid">
+                        <div class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span>Private & Encrypted Processing</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Corporate ATS Parser Compatibility</span>
+                        </div>
+                        <div class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <span>Instant Real-Time Results</span>
+                        </div>
                     </div>
+
                 </div>
+
             </div>
         </section>
 
-        <!-- 2. GRAPHIC DESIGNER CONSULTATION (Qureshi Design Hub) -->
-        <section id="designer-consult" class="designer-section">
+        <!-- QURESHI DESIGN HUB CONSULTATION & CV REDESIGN -->
+        <section id="designer-consult" class="designer-feature-section">
             <div class="container">
-                <div class="designer-card glass-card">
-                    <div class="designer-badge">Recommended Service</div>
-                    <div class="designer-grid">
-                        <div class="designer-info">
-                            <h2>Low ATS Score? Let <span>Qureshi Design Hub</span> Fix It!</h2>
+                <div class="designer-banner-card glass-card">
+                    <div class="ribbon-tag">Official Design Partner</div>
+                    
+                    <div class="designer-grid-layout">
+                        <div class="designer-content-side">
+                            <span class="sub-tag">Professional Resume Redesign</span>
+                            <h2>Failing ATS Checks? Let <span class="green-glow">Qureshi Design Hub</span> Rebuild Your CV</h2>
                             <p>
-                                Get a high-converting, 100% ATS-compliant resume custom-designed for your target job role. Our professional graphic design team rebuilds your CV layout, headers, and keyword alignment.
+                                Standard ATS software discards over 75% of job applications due to bad formatting, unreadable fonts, and missing keyword hierarchies. Qureshi Design Hub crafts custom, high-converting resumes optimized for both automated bots and hiring managers.
                             </p>
-                            <ul class="designer-list">
-                                <li>✓ ATS-Approved Professional Layouts</li>
-                                <li>✓ Tailored for Local & International Companies</li>
-                                <li>✓ 1-on-1 Consultation & Fast Delivery</li>
-                            </ul>
-                            <a href="https://wa.me/923309871122?text=Hi%20Qureshi%20Design%20Hub,%20I%20want%20to%20redesign%20my%20resume%20for%20better%20ATS%20score." target="_blank" class="btn btn-whatsapp">
-                                💬 Contact Qureshi Design Hub (03309871122)
-                            </a>
+
+                            <div class="designer-perks-list">
+                                <div class="perk-card">
+                                    <span class="perk-icon">🎯</span>
+                                    <div>
+                                        <h4>100% ATS-Compliant Layouts</h4>
+                                        <p>Clean typography and correct section parsing.</p>
+                                    </div>
+                                </div>
+                                <div class="perk-card">
+                                    <span class="perk-icon">⚡</span>
+                                    <div>
+                                        <h4>Custom 1-on-1 Design Service</h4>
+                                        <p>Tailored directly for your exact target job roles.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cta-action-row">
+                                <a href="https://wa.me/923309871122?text=Hi%20Qureshi%20Design%20Hub,%20I%20want%20a%20professional%20ATS%20CV%20redesign." target="_blank" class="btn btn-whatsapp-lg">
+                                    💬 Chat with Qureshi Design Hub (03309871122)
+                                </a>
+                            </div>
                         </div>
-                        <div class="designer-avatar-box">
-                            <div class="avatar-glow">🎨</div>
-                            <h4>Qureshi Design Hub</h4>
-                            <span class="status-online">● Designer Online on WhatsApp</span>
+
+                        <div class="designer-profile-side text-center">
+                            <div class="avatar-ring-wrapper">
+                                <div class="avatar-box">
+                                    <span>🎨</span>
+                                </div>
+                            </div>
+                            <h3>Qureshi Design Hub</h3>
+                            <p class="designer-title">Senior Graphic & Resume Designer</p>
+                            <div class="online-indicator">
+                                <span class="green-dot"></span> Online & Available on WhatsApp
+                            </div>
+                            <div class="designer-stats-row">
+                                <div>
+                                    <strong>1,500+</strong>
+                                    <span>CVs Redesigned</span>
+                                </div>
+                                <div>
+                                    <strong>98%</strong>
+                                    <span>ATS Success Rate</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- 3. EDITABLE CV TEMPLATES STORE (Rs. 1,000 Each) -->
-        <section id="templates" class="templates-section">
+        <!-- EDITABLE CV TEMPLATES STORE (RS. 1,000 EACH) -->
+        <section id="templates" class="templates-store-section">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Editable Source Files</span>
-                    <h2>Buy ATS-Optimized Resume Templates</h2>
-                    <p>Buy fully editable source files (.docx / Canva) tested on corporate recruitment ATS software.</p>
+                <div class="section-title-box text-center">
+                    <span class="section-pill">Source File Downloads</span>
+                    <h2>Buy ATS-Friendly Editable Templates</h2>
+                    <p>Get fully customizable MS Word (.docx) & Canva templates pre-formatted for corporate recruitment software.</p>
                 </div>
 
                 <div class="templates-grid">
-                    <!-- Template 1 -->
+                    
+                    <!-- Template Card 1 -->
                     <div class="template-card glass-card">
-                        <div class="template-preview-box">
-                            <span class="template-tag">Word / Canva File</span>
-                            <div class="doc-mockup-mini">📄</div>
+                        <div class="template-image-area">
+                            <span class="file-type-badge">Word / Canva</span>
+                            <div class="template-mockup-graphic">
+                                <div class="mock-line header"></div>
+                                <div class="mock-line body"></div>
+                                <div class="mock-line body short"></div>
+                                <div class="mock-line body"></div>
+                            </div>
                         </div>
-                        <div class="template-details">
+                        <div class="template-info-area">
                             <h3>Executive Corporate Template</h3>
-                            <p>Includes fully editable source file (.docx / Canva link).</p>
-                            <div class="template-price-row">
-                                <span class="price-pkr">Rs. 1,000 PKR</span>
-                                <button onclick="openPaymentModal('Executive Corporate Template', 1000)" class="btn btn-sm btn-primary">Buy Template</button>
+                            <p>Clean structure suited for managerial, corporate, and administrative roles.</p>
+                            <div class="template-purchase-row">
+                                <div class="price-box">
+                                    <span class="currency">PKR</span>
+                                    <span class="amount">1,000</span>
+                                </div>
+                                <button onclick="openPaymentModal('Executive Corporate Template', 1000)" class="btn btn-primary-sm">
+                                    Buy Template
+                                </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Template 2 -->
+                    <!-- Template Card 2 -->
                     <div class="template-card glass-card">
-                        <div class="template-preview-box">
-                            <span class="template-tag">Word / Canva File</span>
-                            <div class="doc-mockup-mini">📄</div>
+                        <div class="template-image-area">
+                            <span class="file-type-badge">Word / Canva</span>
+                            <div class="template-mockup-graphic gulf-style">
+                                <div class="mock-line header"></div>
+                                <div class="mock-line body"></div>
+                                <div class="mock-line body"></div>
+                                <div class="mock-line body short"></div>
+                            </div>
                         </div>
-                        <div class="template-details">
+                        <div class="template-info-area">
                             <h3>Gulf & Middle East Format</h3>
-                            <p>Optimized layout for UAE, KSA & Qatar job portals.</p>
-                            <div class="template-price-row">
-                                <span class="price-pkr">Rs. 1,000 PKR</span>
-                                <button onclick="openPaymentModal('Gulf Standard Template', 1000)" class="btn btn-sm btn-primary">Buy Template</button>
+                            <p>Specifically formatted for UAE, Saudi Arabia, Qatar, and Gulf job portals.</p>
+                            <div class="template-purchase-row">
+                                <div class="price-box">
+                                    <span class="currency">PKR</span>
+                                    <span class="amount">1,000</span>
+                                </div>
+                                <button onclick="openPaymentModal('Gulf Standard Template', 1000)" class="btn btn-primary-sm">
+                                    Buy Template
+                                </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Template 3 -->
+                    <!-- Template Card 3 -->
                     <div class="template-card glass-card">
-                        <div class="template-preview-box">
-                            <span class="template-tag">Word / Canva File</span>
-                            <div class="doc-mockup-mini">📄</div>
+                        <div class="template-image-area">
+                            <span class="file-type-badge">Word / Canva</span>
+                            <div class="template-mockup-graphic minimal-style">
+                                <div class="mock-line header"></div>
+                                <div class="mock-line body short"></div>
+                                <div class="mock-line body"></div>
+                                <div class="mock-line body"></div>
+                            </div>
                         </div>
-                        <div class="template-details">
-                            <h3>Clean Minimal Freshers CV</h3>
-                            <p>Ideal for graduates & quick job applications.</p>
-                            <div class="template-price-row">
-                                <span class="price-pkr">Rs. 1,000 PKR</span>
-                                <button onclick="openPaymentModal('Clean Minimal Template', 1000)" class="btn btn-sm btn-primary">Buy Template</button>
+                        <div class="template-info-area">
+                            <h3>Modern Minimalist Freshers CV</h3>
+                            <p>Ideal for fresh graduates, interns, and tech/creative industry applicants.</p>
+                            <div class="template-purchase-row">
+                                <div class="price-box">
+                                    <span class="currency">PKR</span>
+                                    <span class="amount">1,000</span>
+                                </div>
+                                <button onclick="openPaymentModal('Clean Minimal Template', 1000)" class="btn btn-primary-sm">
+                                    Buy Template
+                                </button>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- 4. PRICING SECTION -->
-        <section id="pricing" class="pricing-section">
+        <!-- PRICING SECTION -->
+        <section id="pricing" class="pricing-plans-section">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Pricing Plans</span>
-                    <h2>Choose Your Plan</h2>
+                <div class="section-title-box text-center">
+                    <span class="section-pill">Transparent Pricing</span>
+                    <h2>Choose Your Membership Plan</h2>
+                    <p>Start with our free ATS checks or unlock unlimited AI scans with our Pro Membership.</p>
                 </div>
 
-                <div class="pricing-grid">
-                    <!-- Free Starter -->
+                <div class="pricing-flex-wrapper">
+                    
+                    <!-- Free Plan Card -->
                     <div class="pricing-card glass-card">
-                        <h3>Free Starter</h3>
-                        <p>For single-time ATS score checks.</p>
-                        <div class="price-amount">Rs. 0 <span>/ login</span></div>
-                        <ul class="pricing-features">
-                            <li>✓ 5 Free AI ATS Checks (Per Email)</li>
-                            <li>✓ Overall ATS Compatibility Score</li>
-                            <li>✓ Basic Keyword Suggestions</li>
-                            <li class="disabled">✕ Unlimited Scans</li>
-                            <li class="disabled">✕ Editable Template Source Files</li>
+                        <div class="plan-header">
+                            <h3>Free Starter Tier</h3>
+                            <p>For quick single-time ATS checks.</p>
+                        </div>
+                        <div class="price-display">
+                            <span class="price">Rs. 0</span>
+                            <span class="period">/ email login</span>
+                        </div>
+                        <ul class="plan-features-list">
+                            <li>✓ 5 Free AI ATS Checks</li>
+                            <li>✓ Instant Compatibility Score</li>
+                            <li>✓ Basic Keyword Structure Analysis</li>
+                            <li class="disabled-feature">✕ Unlimited Scans Lock</li>
+                            <li class="disabled-feature">✕ Free Editable Source Files</li>
                         </ul>
-                        <a href="#ats-engine" class="btn btn-secondary btn-full">Use Free Checks</a>
+                        <a href="#ats-engine" class="btn btn-secondary-lg btn-full">Use Free Checks</a>
                     </div>
 
-                    <!-- Pro Unlimited -->
-                    <div class="pricing-card glass-card pro-card">
-                        <div class="pro-tag">Best Value</div>
-                        <h3>Pro Subscription</h3>
-                        <p>For candidates & job agencies.</p>
-                        <div class="price-amount">Rs. 5,000 <span>/ Month</span></div>
-                        <ul class="pricing-features">
+                    <!-- Pro Plan Card -->
+                    <div class="pricing-card glass-card pro-featured">
+                        <div class="popular-ribbon">Most Popular</div>
+                        <div class="plan-header">
+                            <h3>Pro Unlimited Tier</h3>
+                            <p>For active job seekers & agencies.</p>
+                        </div>
+                        <div class="price-display">
+                            <span class="price">Rs. 5,000</span>
+                            <span class="period">/ Month</span>
+                        </div>
+                        <ul class="plan-features-list">
                             <li>✓ <strong>UNLIMITED</strong> AI ATS Scans</li>
                             <li>✓ Deep Parsing & Keyword Gap Analysis</li>
-                            <li>✓ Free Editable Source Template Included</li>
-                            <li>✓ Direct Qureshi Design Hub Support</li>
+                            <li>✓ 1 Free Editable Source Template Included</li>
+                            <li>✓ Priority Qureshi Design Hub Support</li>
+                            <li>✓ Direct WhatsApp Verification</li>
                         </ul>
-                        <button onclick="openPaymentModal('Pro Subscription Plan', 5000)" class="btn btn-primary btn-full btn-glow">Get Pro Plan (Rs. 5000)</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- GEO OPTIMIZED FAQ SECTION -->
-        <section id="faq" class="faq-section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Frequently Asked Questions</span>
-                    <h2>How AL Resume Lab Works</h2>
-                </div>
-
-                <div class="faq-grid">
-                    <div class="faq-card glass-card">
-                        <h3>What is AL Resume Lab?</h3>
-                        <p>AL Resume Lab is an AI-driven ATS resume parser that evaluates CV structure, keyword density, and formatting compatibility against global hiring standards.</p>
+                        <button onclick="openPaymentModal('Pro Membership Subscription', 5000)" class="btn btn-primary-lg btn-full btn-glow">
+                            Upgrade to Pro (Rs. 5,000)
+                        </button>
                     </div>
 
-                    <div class="faq-card glass-card">
-                        <h3>How many free ATS checks do I get?</h3>
-                        <p>Every user gets 5 free ATS checks per email login. For unlimited checks, you can upgrade to the Pro Plan for Rs. 5,000 PKR / Month.</p>
-                    </div>
-
-                    <div class="faq-card glass-card">
-                        <h3>How can I get my resume redesigned by Qureshi Design Hub?</h3>
-                        <p>If your ATS score is low, you can directly contact Qureshi Design Hub on WhatsApp (+92 330 9871122) for a professional 1-on-1 CV redesign and access to fully editable source templates.</p>
-                    </div>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <!-- INTEGRATED PAYMENT MODAL -->
-    <div id="paymentModal" class="modal-overlay">
-        <div class="modal-card glass-card">
-            <button onclick="closePaymentModal()" class="modal-close">&times;</button>
-            <h2 id="modalTitle">Complete Payment</h2>
-            <div class="modal-amount-box">
-                <span>Total Amount:</span>
-                <strong id="modalAmount">Rs. 5,000 PKR</strong>
-            </div>
-
-            <div class="bank-details-box">
-                <h3>🏦 Payment Method (EasyPaisa / JazzCash / Bank)</h3>
-                <p><strong>Wallet / Bank:</strong> EasyPaisa / JazzCash</p>
-                <p><strong>Account Number:</strong> 03309871122</p>
-                <p><strong>Account Title:</strong> Qureshi Design Hub</p>
-            </div>
-
-            <form id="modalPaymentForm" class="payment-form">
-                <div class="form-group">
-                    <label>Your Email Address</label>
-                    <input type="email" placeholder="name@example.com" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Transaction ID / Reference No.</label>
-                    <input type="text" placeholder="e.g., 928374102938" required>
-                </div>
-
-                <button type="submit" class="btn btn-primary btn-full">Submit Receipt via WhatsApp</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container text-center">
-            <p>&copy; 2026 AL Resume Lab × Qureshi Design Hub | Professional AI ATS Solutions</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+      
