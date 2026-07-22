@@ -2282,12 +2282,17 @@ html, body {
     }
 
 }
-/* Remove custom cursor dot on mobile */
+/* Disable unwanted white cursor dot on mobile */
 @media (max-width: 768px) {
   .cursor-dot,
+  .cursor-circle,
   .cursor-outline,
   .custom-cursor,
-  .click-dot {
+  .click-effect,
+  .click-dot,
+  .mouse-dot {
     display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
   }
 }
