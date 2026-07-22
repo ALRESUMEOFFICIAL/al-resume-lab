@@ -1,485 +1,1314 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AL Resume Lab — AI-Powered Resume Builder & ATS Checker</title>
-<meta name="description" content="Build ATS-friendly resumes with AI, check your ATS score instantly, and land more interviews. AL Resume Lab is trusted by job seekers across the USA, Canada, Europe and the Gulf.">
-<meta name="keywords" content="AI Resume Builder, ATS Resume Checker, Resume Scanner, Resume Score, Resume Optimization, CV Builder, ATS Friendly Resume, AI Career Tools, Resume Analyzer, Professional Resume">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <!-- =========================
+         BASIC META
+    ========================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AL Resume Lab | AI-Powered Resume & ATS Checker</title>
+
+    <meta name="description"
+        content="Build ATS-friendly resumes, analyze your resume with AI, improve your ATS score, generate cover letters, and land your dream job with AL Resume Lab.">
+
+    <meta name="keywords"
+        content="AI Resume Builder, ATS Checker, Resume Score, Resume Builder, Cover Letter Generator, Resume AI">
+
+    <meta name="author" content="AL Resume Lab">
+
+    <meta name="theme-color" content="#07152d">
+
+    <!-- =========================
+         FAVICON
+    ========================== -->
+    <link rel="icon" href="assets/favicon.png">
+
+    <!-- =========================
+         GOOGLE FONTS
+    ========================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- =========================
+         REMIX ICONS
+    ========================== -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- =========================
+         CSS
+    ========================== -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-<div class="grain" aria-hidden="true"></div>
+    <!-- =========================
+         LOADER
+    ========================== -->
 
-<!-- 1. PREMIUM NAVBAR -->
-<header class="navbar" id="navbar">
-  <div class="container navbar__inner">
-    <a href="#top" class="brand">
-      <span class="brand__mark">AL</span>
-      <span class="brand__name">Resume<em>Lab</em></span>
-    </a>
+    <div class="loader">
 
-    <nav class="nav-links" id="navLinks">
-      <a href="#features">Features</a>
-      <a href="#ats-checker">ATS Checker</a>
-      <a href="#templates">Templates</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </nav>
+        <div class="loader-logo">
 
-    <div class="navbar__actions">
-      <a href="#login" class="btn btn--ghost">Log in</a>
-      <a href="#builder" class="btn btn--primary">Build my resume</a>
+            <span>AL</span>
+
+        </div>
+
     </div>
 
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+    <!-- =========================
+         CURSOR
+    ========================== -->
+
+    <div class="cursor"></div>
+
+    <div class="cursor-blur"></div>
+
+    <!-- =========================
+         SCROLL PROGRESS
+    ========================== -->
+
+    <div class="scroll-progress"></div>
+
+    <!-- =========================
+         BACK TO TOP
+    ========================== -->
+
+    <button class="back-top">
+
+        <i class="ri-arrow-up-line"></i>
+
     </button>
-  </div>
-</header>
 
-<main id="top">
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-  <!-- 2. HERO -->
-  <section class="hero">
-    <div class="container hero__grid">
-      <div class="hero__copy">
-        <p class="eyebrow">AI-Powered Resume Builder &amp; ATS Checker</p>
-        <h1>Your resume,<br> <span class="text-gradient">scored before</span><br> it's ever seen.</h1>
-        <p class="hero__lead">
-          AL Resume Lab writes, formats and stress-tests your resume against real
-          Applicant Tracking Systems — so recruiters see a 90+ before you ever hit send.
-        </p>
-        <div class="hero__cta">
-          <a href="#builder" class="btn btn--primary btn--lg">Build my resume free</a>
-          <a href="#ats-checker" class="btn btn--outline btn--lg">Check my ATS score</a>
+    <header class="header">
+
+        <div class="container">
+
+            <nav class="navbar">
+
+                <!-- LOGO -->
+
+                <a href="#" class="logo">
+
+                    <div class="logo-icon">
+
+                        AL
+
+                    </div>
+
+                    <div class="logo-text">
+
+                        <h2>AL Resume Lab</h2>
+
+                        <span>AI-Powered Resume & ATS Checker</span>
+
+                    </div>
+
+                </a>
+
+                <!-- MENU -->
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="#home">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#features">Features</a>
+                    </li>
+
+                    <li>
+                        <a href="#resume">Resume Builder</a>
+                    </li>
+
+                    <li>
+                        <a href="#ats">ATS Checker</a>
+                    </li>
+
+                    <li>
+                        <a href="#pricing">Pricing</a>
+                    </li>
+
+                    <li>
+                        <a href="#faq">FAQ</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+
+                <!-- ACTIONS -->
+
+                <div class="nav-actions">
+
+                    <button class="theme-btn">
+
+                        <i class="ri-moon-line"></i>
+
+                    </button>
+
+                    <a href="#" class="login-btn">
+
+                        Login
+
+                    </a>
+
+                    <a href="#" class="primary-btn">
+
+                        Get Started
+
+                    </a>
+
+                </div>
+
+                <!-- MOBILE -->
+
+                <button class="menu-toggle">
+
+                    <i class="ri-menu-3-line"></i>
+
+                </button>
+
+            </nav>
+
         </div>
-        <div class="hero__proof">
-          <div class="avatars" aria-hidden="true">
-            <span></span><span></span><span></span><span></span>
-          </div>
-          <p><strong>50,000+</strong> resumes scored this month</p>
-        </div>
-      </div>
 
-      <div class="hero__visual">
-        <div class="scan-card" id="scanCard">
-          <div class="scan-card__top">
-            <span class="scan-card__dot"></span>
-            <span class="scan-card__dot"></span>
-            <span class="scan-card__dot"></span>
-            <span class="scan-card__title">resume_final_v3.pdf</span>
-          </div>
-          <div class="scan-card__body">
-            <div class="scan-line" aria-hidden="true"></div>
-            <div class="doc-line" style="--w:88%"></div>
-            <div class="doc-line" style="--w:64%"></div>
-            <div class="doc-line" style="--w:76%"></div>
-            <div class="doc-line" style="--w:52%"></div>
-            <div class="doc-line" style="--w:70%"></div>
-            <div class="doc-line" style="--w:40%"></div>
-          </div>
-          <div class="scan-card__footer">
-            <div class="gauge" id="heroGauge">
-              <svg viewBox="0 0 120 120">
-                <circle class="gauge__track" cx="60" cy="60" r="52"></circle>
-                <circle class="gauge__fill" id="heroGaugeFill" cx="60" cy="60" r="52"></circle>
-              </svg>
-              <div class="gauge__label">
-                <span class="gauge__num" id="heroGaugeNum">0</span>
-                <span class="gauge__sub">ATS Score</span>
-              </div>
+    </header>
+
+    <!-- =========================
+         MAIN START
+    ========================== -->
+
+    <main>
+
+        <!-- Hero Section Start Here -->
+              <!-- =========================
+             HERO SECTION
+        ========================== -->
+
+        <section class="hero" id="home">
+
+            <div class="container">
+
+                <div class="hero-wrapper">
+
+                    <!-- LEFT -->
+
+                    <div class="hero-content">
+
+                        <div class="hero-badge">
+
+                            <i class="ri-ai-generate"></i>
+
+                            <span>Trusted AI Resume Platform</span>
+
+                        </div>
+
+                        <h1>
+
+                            Create an
+                            <span>ATS-Friendly Resume</span>
+                            That Gets More Interviews
+
+                        </h1>
+
+                        <p>
+
+                            Build professional resumes, check ATS score,
+                            generate AI cover letters, optimize keywords,
+                            and improve your chances of getting hired.
+
+                        </p>
+
+                        <div class="hero-buttons">
+
+                            <a href="#" class="primary-btn">
+
+                                Build Resume
+
+                            </a>
+
+                            <a href="#" class="secondary-btn">
+
+                                Check ATS Score
+
+                            </a>
+
+                        </div>
+
+                        <div class="hero-stats">
+
+                            <div class="stat-card">
+
+                                <h2>50K+</h2>
+
+                                <span>Resumes Created</span>
+
+                            </div>
+
+                            <div class="stat-card">
+
+                                <h2>96%</h2>
+
+                                <span>ATS Success Rate</span>
+
+                            </div>
+
+                            <div class="stat-card">
+
+                                <h2>190+</h2>
+
+                                <span>Countries</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT -->
+
+                    <div class="hero-image">
+
+                        <div class="resume-window">
+
+                            <div class="window-top">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+                            <div class="resume-body">
+
+                                <div class="resume-header"></div>
+
+                                <div class="resume-line long"></div>
+                                <div class="resume-line"></div>
+                                <div class="resume-line"></div>
+
+                                <div class="resume-box"></div>
+
+                                <div class="resume-line long"></div>
+                                <div class="resume-line"></div>
+                                <div class="resume-line short"></div>
+
+                                <div class="ats-card">
+
+                                    <div class="circle-score">
+
+                                        <span>98%</span>
+
+                                    </div>
+
+                                    <div class="ats-content">
+
+                                        <h4>ATS Score</h4>
+
+                                        <p>Excellent Resume</p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="floating-card card-one">
+
+                            <i class="ri-file-check-line"></i>
+
+                            <span>Resume Ready</span>
+
+                        </div>
+
+                        <div class="floating-card card-two">
+
+                            <i class="ri-shield-check-line"></i>
+
+                            <span>ATS Passed</span>
+
+                        </div>
+
+                        <div class="floating-card card-three">
+
+                            <i class="ri-ai-generate"></i>
+
+                            <span>AI Optimized</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
-            <ul class="scan-card__checks">
-              <li class="is-done">Keywords matched</li>
-              <li class="is-done">Format is parseable</li>
-              <li class="is-pending">Quantify 2 more bullets</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- 3. TRUSTED COMPANIES -->
-  <section class="trusted">
-    <div class="container">
-      <p class="trusted__label">Candidates hired at companies like</p>
-      <div class="trusted__logos" aria-hidden="true">
-        <span>ORACLE</span><span>ACCENTURE</span><span>SIEMENS</span><span>EMIRATES</span>
-        <span>DELOITTE</span><span>INFOSYS</span><span>TD BANK</span><span>VODAFONE</span>
-      </div>
-    </div>
-  </section>
+        </section>
 
-  <!-- 4. FEATURES -->
-  <section class="features" id="features">
-    <div class="container">
-      <p class="eyebrow eyebrow--center">Core Features</p>
-      <h2 class="section-title">Everything between a blank page and an interview</h2>
+        <!-- =========================
+             END HERO SECTION
+        ========================== -->
+              <!-- =========================
+             TRUSTED BY SECTION
+        ========================== -->
 
-      <div class="feature-grid">
-        <article class="feature-card feature-card--wide">
-          <div class="feature-card__icon">🧠</div>
-          <h3>AI Resume Builder</h3>
-          <p>Create a professional, role-specific resume in minutes — AI drafts the bullets, you keep the voice.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-card__icon">🎯</div>
-          <h3>ATS Resume Checker</h3>
-          <p>Analyze your resume against real Applicant Tracking Systems and fix what's blocking you.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-card__icon">📊</div>
-          <h3>Resume Score</h3>
-          <p>Get an ATS score from 0–100 with a detailed, line-by-line breakdown.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-card__icon">🔑</div>
-          <h3>Keyword Optimization</h3>
-          <p>Identify keywords missing from your target job description before a recruiter does.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-card__icon">🔍</div>
-          <h3>Resume Analyzer</h3>
-          <p>AI suggestions for formatting, grammar, skills and experience — section by section.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-card__icon">✉️</div>
-          <h3>Cover Letter Generator</h3>
-          <p>Generate a tailored cover letter for any job posting in one click.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-card__icon">🗂️</div>
-          <h3>Resume Templates</h3>
-          <p>Modern, professional, ATS-friendly templates built to pass the parser and the eye test.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-card__icon">⬇️</div>
-          <h3>Resume Downloader</h3>
-          <p>Export a clean, print-ready PDF whenever you need it.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-card__icon">✏️</div>
-          <h3>Resume Editor</h3>
-          <p>Edit anytime with a live preview — no surprises when you export.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-card__icon">🎓</div>
-          <h3>AI Career Tips</h3>
-          <p>Interview prep and career-improvement suggestions tailored to your target role.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+        <section class="trusted-section">
 
-  <!-- 5. RESUME BUILDER -->
-  <section class="builder" id="builder">
-    <div class="container builder__grid">
-      <div class="builder__copy">
-        <p class="eyebrow">Resume Builder</p>
-        <h2 class="section-title">Answer a few prompts. Get a full resume.</h2>
-        <p class="section-lead">
-          Tell the builder your role, your experience and your target job — it structures the
-          sections, writes achievement-led bullets, and formats everything for ATS parsing.
-        </p>
-        <ul class="checklist">
-          <li>Role-specific bullet suggestions</li>
-          <li>Auto-formatted sections &amp; spacing</li>
-          <li>Rewrite, shorten or strengthen any line</li>
-        </ul>
-        <a href="#" class="btn btn--primary">Start building</a>
-      </div>
-      <div class="builder__panel">
-        <div class="mock-editor">
-          <div class="mock-editor__field">
-            <label>Target role</label>
-            <div class="mock-editor__input">Senior Frontend Engineer</div>
-          </div>
-          <div class="mock-editor__field">
-            <label>Experience bullet</label>
-            <div class="mock-editor__input mock-editor__input--typing" id="typingBullet"></div>
-          </div>
-          <div class="mock-editor__tag-row">
-            <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">CI/CD</span><span class="tag">+ Suggest more</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+            <div class="container">
 
-  <!-- 6. ATS CHECKER -->
-  <section class="ats" id="ats-checker">
-    <div class="container ats__grid">
-      <div class="ats__panel">
-        <div class="ats-report">
-          <div class="ats-report__header">
-            <span>ATS Compatibility Report</span>
-            <span class="ats-report__badge">92 / 100</span>
-          </div>
-          <div class="ats-report__row"><span>Parseable format</span><span class="ok">Pass</span></div>
-          <div class="ats-report__row"><span>Contact info detected</span><span class="ok">Pass</span></div>
-          <div class="ats-report__row"><span>Keyword match</span><span class="warn">8/12</span></div>
-          <div class="ats-report__row"><span>Section headers</span><span class="ok">Pass</span></div>
-          <div class="ats-report__row"><span>Date formatting</span><span class="warn">Review</span></div>
-          <div class="ats-report__bar"><span style="--p:92%"></span></div>
-        </div>
-      </div>
-      <div class="ats__copy">
-        <p class="eyebrow">ATS Resume Checker</p>
-        <h2 class="section-title">Most resumes never reach a human.</h2>
-        <p class="section-lead">
-          Applicant Tracking Systems filter resumes before recruiters see them. Upload yours,
-          paste the job description, and see exactly what the system sees.
-        </p>
-        <a href="#" class="btn btn--outline">Scan my resume</a>
-      </div>
-    </div>
-  </section>
+                <div class="section-mini-title">
+                    Trusted by job seekers worldwide
+                </div>
 
-  <!-- 7. AI RESUME ANALYSIS -->
-  <section class="analysis">
-    <div class="container">
-      <p class="eyebrow eyebrow--center">AI Resume Analysis</p>
-      <h2 class="section-title section-title--center">Feedback on every part of the page</h2>
-      <div class="analysis-grid">
-        <div class="analysis-card">
-          <span class="analysis-card__tag">Formatting</span>
-          <p>Consistent spacing, fonts and margins so nothing breaks on parsing.</p>
-        </div>
-        <div class="analysis-card">
-          <span class="analysis-card__tag">Grammar</span>
-          <p>Tense, punctuation and clarity checks across every bullet.</p>
-        </div>
-        <div class="analysis-card">
-          <span class="analysis-card__tag">Skills</span>
-          <p>Flags outdated or missing skills against your target role.</p>
-        </div>
-        <div class="analysis-card">
-          <span class="analysis-card__tag">Experience</span>
-          <p>Suggests stronger, quantified phrasing for your achievements.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+                <div class="trusted-logos">
 
-  <!-- 8. RESUME TEMPLATES -->
-  <section class="templates" id="templates">
-    <div class="container">
-      <p class="eyebrow eyebrow--center">Resume Templates</p>
-      <h2 class="section-title section-title--center">Modern, professional, ATS-friendly</h2>
-      <div class="template-grid">
-        <div class="template-card">
-          <div class="template-thumb template-thumb--classic"></div>
-          <p>Classic</p>
-        </div>
-        <div class="template-card">
-          <div class="template-thumb template-thumb--modern"></div>
-          <p>Modern</p>
-        </div>
-        <div class="template-card">
-          <div class="template-thumb template-thumb--minimal"></div>
-          <p>Minimal</p>
-        </div>
-        <div class="template-card">
-          <div class="template-thumb template-thumb--technical"></div>
-          <p>Technical</p>
-        </div>
-      </div>
-    </div>
-  </section>
+                    <div class="logo-item">Google</div>
 
-  <!-- 9. RESUME SCORE -->
-  <section class="score">
-    <div class="container score__grid">
-      <div class="score__copy">
-        <p class="eyebrow">Resume Score</p>
-        <h2 class="section-title">One number. Full clarity.</h2>
-        <p class="section-lead">
-          Every resume gets a 0–100 ATS score, broken down by keyword match, formatting,
-          section structure and readability — so you know exactly what to fix first.
-        </p>
-      </div>
-      <div class="score__breakdown">
-        <div class="score-row">
-          <span>Keyword Match</span>
-          <div class="score-track"><span style="--p:82%"></span></div><em>82%</em>
-        </div>
-        <div class="score-row">
-          <span>Formatting</span>
-          <div class="score-track"><span style="--p:95%"></span></div><em>95%</em>
-        </div>
-        <div class="score-row">
-          <span>Structure</span>
-          <div class="score-track"><span style="--p:88%"></span></div><em>88%</em>
-        </div>
-        <div class="score-row">
-          <span>Readability</span>
-          <div class="score-track"><span style="--p:90%"></span></div><em>90%</em>
-        </div>
-      </div>
-    </div>
-  </section>
+                    <div class="logo-item">Microsoft</div>
 
-  <!-- 10. AI WORKFLOW -->
-  <section class="workflow">
-    <div class="container">
-      <p class="eyebrow eyebrow--center">How It Works</p>
-      <h2 class="section-title section-title--center">From blank page to interview-ready</h2>
-      <div class="workflow-track">
-        <div class="workflow-step">
-          <span class="workflow-step__num">01</span>
-          <h3>Add your details</h3>
-          <p>Import your old resume or answer a short guided form.</p>
-        </div>
-        <div class="workflow-step">
-          <span class="workflow-step__num">02</span>
-          <h3>AI drafts the content</h3>
-          <p>Bullets, summary and skills written for your target role.</p>
-        </div>
-        <div class="workflow-step">
-          <span class="workflow-step__num">03</span>
-          <h3>Check the ATS score</h3>
-          <p>Scan against the job description and see what's missing.</p>
-        </div>
-        <div class="workflow-step">
-          <span class="workflow-step__num">04</span>
-          <h3>Download &amp; apply</h3>
-          <p>Export a clean PDF and apply with confidence.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+                    <div class="logo-item">Amazon</div>
 
-  <!-- 11. STATISTICS -->
-  <section class="stats">
-    <div class="container stats__grid">
-      <div class="stat-card">
-        <span class="stat-card__num" data-count="500000">0</span>
-        <p>Resumes built</p>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card__num" data-count="92">0</span>
-        <p>Avg. ATS score improvement %</p>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card__num" data-count="120">0</span>
-        <p>Countries reached</p>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card__num" data-count="3">0</span>
-        <p>Minutes to first draft</p>
-      </div>
-    </div>
-  </section>
+                    <div class="logo-item">Meta</div>
 
-  <!-- 12. WHY CHOOSE US -->
-  <section class="why">
-    <div class="container">
-      <p class="eyebrow eyebrow--center">Why Choose Us</p>
-      <h2 class="section-title section-title--center">Built for the whole job search, not just the resume</h2>
-      <div class="why-grid">
-        <div class="why-card">
-          <h3>Global by default</h3>
-          <p>Formats and phrasing tuned for the Gulf, USA, Canada and Europe.</p>
-        </div>
-        <div class="why-card">
-          <h3>Affordable</h3>
-          <p>A free tier that's actually usable, and premium priced for individuals.</p>
-        </div>
-        <div class="why-card">
-          <h3>ATS-first engineering</h3>
-          <p>Templates are tested against parsers, not just designed to look good.</p>
-        </div>
-        <div class="why-card">
-          <h3>Privacy respected</h3>
-          <p>Your data is yours — export, delete or move it whenever you like.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+                    <div class="logo-item">Apple</div>
 
-  <!-- 13. PRICING -->
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <p class="eyebrow eyebrow--center">Pricing</p>
-      <h2 class="section-title section-title--center">Start free. Upgrade when it counts.</h2>
+                    <div class="logo-item">IBM</div>
 
-      <div class="pricing-grid">
-        <div class="price-card">
-          <h3>Free</h3>
-          <p class="price-card__price">$0<span>/forever</span></p>
-          <ul>
-            <li>1 resume</li>
-            <li>Basic ATS score</li>
-            <li>Limited AI suggestions</li>
-            <li>Basic templates</li>
-          </ul>
-          <a href="#" class="btn btn--outline">Get started</a>
-        </div>
-        <div class="price-card price-card--featured">
-          <span class="price-card__flag">Most popular</span>
-          <h3>Premium</h3>
-          <p class="price-card__price">$9<span>/month</span></p>
-          <ul>
-            <li>Unlimited resume builds</li>
-            <li>Unlimited ATS checks</li>
-            <li>AI resume rewrite</li>
-            <li>AI skill suggestions</li>
-            <li>AI achievement generator</li>
-            <li>Premium templates</li>
-            <li>Cover letter generator</li>
-            <li>Resume version history</li>
-            <li>Cloud storage</li>
-            <li>Priority support</li>
-          </ul>
-          <a href="#" class="btn btn--primary">Go Premium</a>
-        </div>
-      </div>
-    </div>
-  </section>
+                </div>
 
-  <!-- 14. TESTIMONIALS -->
-  <section class="testimonials">
-    <div class="container">
-      <p class="eyebrow eyebrow--center">Testimonials</p>
-      <h2 class="section-title section-title--center">Job seekers who got past the filter</h2>
-      <div class="testimonial-track" id="testimonialTrack">
-        <blockquote class="testimonial-card">
-          <p>"My ATS score went from 54 to 91. Three interview calls the same week."</p>
-          — Fresh Graduate, IT
-        </blockquote>
-        <blockquote class="testimonial-card">
-          <p>"Rewrote my whole resume for a Gulf application in one afternoon."</p>
-          — Civil Engineer, Dubai
-        </blockquote>
-        <blockquote class="testimonial-card">
-          <p>"The keyword gap report showed me exactly what recruiters were scanning for."</p>
-          — Healthcare Professional, Canada
-        </blockquote>
-        <blockquote class="testimonial-card">
-          <p>"As a freelancer, the templates finally made my resume look full-time-serious."</p>
-          — Freelance Designer
-        </blockquote>
-      </div>
-    </div>
-  </section>
+            </div>
 
-  <!-- 15. FAQ -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <p class="eyebrow eyebrow--center">FAQ</p>
-      <h2 class="section-title section-title--center">Questions, answered</h2>
-      <div class="faq-list" id="faqList">
-        <div class="faq-item">
-          <button class="faq-item__q">Is AL Resume Lab really free to start? <span>+</span></button>
-          <div class="faq-item__a"><p>Yes — the Free plan gives you one full resume, a basic ATS score and limited AI suggestions with no card required.</p></div>
+        </section>
+
+        <!-- =========================
+             FEATURES SECTION
+        ========================== -->
+
+        <section class="features" id="features">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-badge">
+
+                        Why Choose AL Resume Lab
+
+                    </span>
+
+                    <h2>
+
+                        Everything You Need To Get Hired Faster
+
+                    </h2>
+
+                    <p>
+
+                        Create professional resumes, improve ATS compatibility,
+                        generate AI-powered cover letters, and optimize your job
+                        applications with one modern platform.
+
+                    </p>
+
+                </div>
+
+                <div class="features-grid">
+
+                    <!-- Card 1 -->
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="ri-file-edit-line"></i>
+                        </div>
+
+                        <h3>AI Resume Builder</h3>
+
+                        <p>
+                            Create beautiful, ATS-friendly resumes in minutes
+                            using intelligent AI suggestions.
+                        </p>
+
+                    </div>
+
+                    <!-- Card 2 -->
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="ri-search-eye-line"></i>
+                        </div>
+
+                        <h3>ATS Resume Checker</h3>
+
+                        <p>
+                            Analyze your resume and discover issues before
+                            submitting job applications.
+                        </p>
+
+                    </div>
+
+                    <!-- Card 3 -->
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="ri-robot-2-line"></i>
+                        </div>
+
+                        <h3>AI Suggestions</h3>
+
+                        <p>
+                            Improve wording, keywords, formatting and
+                            professional impact automatically.
+                        </p>
+
+                    </div>
+
+                    <!-- Card 4 -->
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="ri-award-line"></i>
+                        </div>
+
+                        <h3>Professional Templates</h3>
+
+                        <p>
+                            Choose modern resume templates designed for
+                            recruiters and ATS systems.
+                        </p>
+
+                    </div>
+
+                    <!-- Card 5 -->
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="ri-file-paper-2-line"></i>
+                        </div>
+
+                        <h3>Cover Letter Generator</h3>
+
+                        <p>
+                            Instantly generate personalized cover letters
+                            tailored to each job description.
+                        </p>
+
+                    </div>
+
+                    <!-- Card 6 -->
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="ri-line-chart-line"></i>
+                        </div>
+
+                        <h3>Resume Score</h3>
+
+                        <p>
+                            Get a detailed resume score with actionable
+                            recommendations to improve hiring chances.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             END FEATURES SECTION
+        ========================== -->
+              <!-- =========================
+             RESUME BUILDER SECTION
+        ========================== -->
+
+        <section class="resume-builder" id="resume">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-badge">
+                        AI Resume Builder
+                    </span>
+
+                    <h2>
+                        Build a Professional Resume in Minutes
+                    </h2>
+
+                    <p>
+                        Create a modern, ATS-friendly resume with AI assistance,
+                        customizable templates, and recruiter-approved layouts.
+                    </p>
+
+                </div>
+
+                <div class="resume-grid">
+
+                    <!-- Left -->
+
+                    <div class="resume-preview">
+
+                        <div class="resume-paper">
+
+                            <div class="paper-header"></div>
+
+                            <div class="paper-line long"></div>
+                            <div class="paper-line"></div>
+                            <div class="paper-line short"></div>
+
+                            <div class="paper-box"></div>
+
+                            <div class="paper-line long"></div>
+                            <div class="paper-line"></div>
+                            <div class="paper-line"></div>
+
+                            <div class="paper-box small"></div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Right -->
+
+                    <div class="resume-content">
+
+                        <h3>Create Smarter, Faster & Better</h3>
+
+                        <p>
+                            Our AI helps you write stronger summaries, optimize
+                            keywords, improve formatting, and make your resume
+                            stand out to recruiters.
+                        </p>
+
+                        <ul class="feature-list">
+
+                            <li>
+                                <i class="ri-check-line"></i>
+                                ATS-Friendly Templates
+                            </li>
+
+                            <li>
+                                <i class="ri-check-line"></i>
+                                AI Writing Assistant
+                            </li>
+
+                            <li>
+                                <i class="ri-check-line"></i>
+                                One-Click PDF Export
+                            </li>
+
+                            <li>
+                                <i class="ri-check-line"></i>
+                                Modern Professional Designs
+                            </li>
+
+                        </ul>
+
+                        <a href="#" class="primary-btn">
+                            Start Building
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             ATS CHECKER SECTION
+        ========================== -->
+
+        <section class="ats-section" id="ats">
+
+            <div class="container">
+
+                <div class="ats-wrapper">
+
+                    <div class="ats-content">
+
+                        <span class="section-badge">
+                            ATS Resume Checker
+                        </span>
+
+                        <h2>
+                            Improve Your ATS Score Before Applying
+                        </h2>
+
+                        <p>
+                            Upload your resume and receive an instant ATS
+                            compatibility report with AI-powered suggestions
+                            to improve your chances of getting shortlisted.
+                        </p>
+
+                        <div class="ats-points">
+
+                            <div class="point">
+                                <i class="ri-checkbox-circle-fill"></i>
+                                Keyword Optimization
+                            </div>
+
+                            <div class="point">
+                                <i class="ri-checkbox-circle-fill"></i>
+                                Formatting Analysis
+                            </div>
+
+                            <div class="point">
+                                <i class="ri-checkbox-circle-fill"></i>
+                                Skills Matching
+                            </div>
+
+                            <div class="point">
+                                <i class="ri-checkbox-circle-fill"></i>
+                                Instant ATS Score
+                            </div>
+
+                        </div>
+
+                        <a href="#" class="primary-btn">
+                            Check Resume
+                        </a>
+
+                    </div>
+
+                    <div class="ats-score-card">
+
+                        <div class="score-circle">
+
+                            <span>94%</span>
+
+                        </div>
+
+                        <h3>Excellent ATS Score</h3>
+
+                        <p>
+                            Your resume is highly optimized and ready for
+                            recruiter screening.
+                        </p>
+
+                        <div class="score-bars">
+
+                            <div class="score-item">
+                                <span>Keywords</span>
+                                <div class="progress"><div class="fill w95"></div></div>
+                            </div>
+
+                            <div class="score-item">
+                                <span>Formatting</span>
+                                <div class="progress"><div class="fill w92"></div></div>
+                            </div>
+
+                            <div class="score-item">
+                                <span>Skills</span>
+                                <div class="progress"><div class="fill w90"></div></div>
+                            </div>
+
+                            <div class="score-item">
+                                <span>Readability</span>
+                                <div class="progress"><div class="fill w96"></div></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             AI COVER LETTER SECTION
+        ========================== -->
+
+        <section class="cover-letter">
+
+            <div class="container">
+
+                <div class="cover-wrapper">
+
+                    <div class="cover-content">
+
+                        <span class="section-badge">
+                            AI Cover Letter
+                        </span>
+
+                        <h2>
+                            Generate Personalized Cover Letters Instantly
+                        </h2>
+
+                        <p>
+                            Let AI create a professional cover letter tailored
+                            to your resume and the job description in seconds.
+                        </p>
+
+                        <a href="#" class="primary-btn">
+                            Generate Cover Letter
+                        </a>
+
+                    </div>
+
+                    <div class="cover-preview">
+
+                        <div class="letter-card">
+
+                            <div class="letter-header"></div>
+
+                            <div class="paper-line long"></div>
+                            <div class="paper-line"></div>
+                            <div class="paper-line"></div>
+                            <div class="paper-line short"></div>
+
+                            <div class="paper-box"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+                <!-- =========================
+             PRICING SECTION
+        ========================== -->
+
+        <section class="pricing" id="pricing">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-badge">
+                        Pricing Plans
+                    </span>
+
+                    <h2>
+                        Choose the Perfect Plan
+                    </h2>
+
+                    <p>
+                        Start free and upgrade whenever you need advanced AI
+                        resume tools and ATS analysis.
+                    </p>
+
+                </div>
+
+                <div class="pricing-grid">
+
+                    <!-- FREE -->
+
+                    <div class="pricing-card">
+
+                        <span class="plan-tag">Free</span>
+
+                        <h3>Starter</h3>
+
+                        <div class="price">
+                            <h2>$0</h2>
+                            <span>/Forever</span>
+                        </div>
+
+                        <ul class="pricing-list">
+
+                            <li><i class="ri-check-line"></i>1 Resume</li>
+                            <li><i class="ri-check-line"></i>Basic Templates</li>
+                            <li><i class="ri-check-line"></i>PDF Download</li>
+                            <li><i class="ri-check-line"></i>Basic ATS Check</li>
+
+                        </ul>
+
+                        <a href="#" class="secondary-btn">
+                            Get Started
+                        </a>
+
+                    </div>
+
+                    <!-- PRO -->
+
+                    <div class="pricing-card featured-plan">
+
+                        <span class="popular-badge">
+                            Most Popular
+                        </span>
+
+                        <h3>Professional</h3>
+
+                        <div class="price">
+                            <h2>$9</h2>
+                            <span>/Month</span>
+                        </div>
+
+                        <ul class="pricing-list">
+
+                            <li><i class="ri-check-line"></i>Unlimited Resumes</li>
+                            <li><i class="ri-check-line"></i>Premium Templates</li>
+                            <li><i class="ri-check-line"></i>Advanced ATS Score</li>
+                            <li><i class="ri-check-line"></i>AI Resume Rewrite</li>
+                            <li><i class="ri-check-line"></i>AI Cover Letter</li>
+                            <li><i class="ri-check-line"></i>Priority Support</li>
+
+                        </ul>
+
+                        <a href="#" class="primary-btn">
+                            Upgrade Now
+                        </a>
+
+                    </div>
+
+                    <!-- BUSINESS -->
+
+                    <div class="pricing-card">
+
+                        <span class="plan-tag">
+                            Team
+                        </span>
+
+                        <h3>Business</h3>
+
+                        <div class="price">
+                            <h2>$29</h2>
+                            <span>/Month</span>
+                        </div>
+
+                        <ul class="pricing-list">
+
+                            <li><i class="ri-check-line"></i>Everything in Pro</li>
+                            <li><i class="ri-check-line"></i>Team Members</li>
+                            <li><i class="ri-check-line"></i>Admin Dashboard</li>
+                            <li><i class="ri-check-line"></i>API Access</li>
+                            <li><i class="ri-check-line"></i>Priority AI Queue</li>
+
+                        </ul>
+
+                        <a href="#" class="secondary-btn">
+                            Contact Sales
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             TESTIMONIALS
+        ========================== -->
+
+        <section class="testimonials">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-badge">
+                        Testimonials
+                    </span>
+
+                    <h2>
+                        Loved by Job Seekers
+                    </h2>
+
+                </div>
+
+                <div class="testimonial-grid">
+
+                    <div class="testimonial-card">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            "The ATS checker helped me identify missing keywords.
+                            I received interview calls within days."
+                        </p>
+
+                        <div class="user">
+
+                            <div class="avatar">A</div>
+
+                            <div>
+
+                                <h4>Ali Hassan</h4>
+
+                                <span>Software Engineer</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="testimonial-card">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            "Professional templates and AI suggestions completely
+                            transformed my resume."
+                        </p>
+
+                        <div class="user">
+
+                            <div class="avatar">S</div>
+
+                            <div>
+
+                                <h4>Sarah Khan</h4>
+
+                                <span>HR Specialist</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="testimonial-card">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            "Simple, fast and extremely useful. My ATS score
+                            improved from 61% to 95%."
+                        </p>
+
+                        <div class="user">
+
+                            <div class="avatar">M</div>
+
+                            <div>
+
+                                <h4>Muhammad Ahmed</h4>
+
+                                <span>Project Engineer</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             STATS SECTION
+        ========================== -->
+
+        <section class="stats">
+
+            <div class="container">
+
+                <div class="stats-grid">
+
+                    <div class="stat-box">
+                        <h2>50K+</h2>
+                        <p>Resumes Built</p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h2>96%</h2>
+                        <p>ATS Success</p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h2>190+</h2>
+                        <p>Countries</p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h2>4.9★</h2>
+                        <p>User Rating</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             CTA SECTION
+        ========================== -->
+
+        <section class="cta">
+
+            <div class="container">
+
+                <div class="cta-box">
+
+                    <h2>
+                        Ready to Build Your Dream Resume?
+                    </h2>
+
+                    <p>
+                        Join thousands of professionals using AL Resume Lab to
+                        create ATS-friendly resumes and land better jobs.
+                    </p>
+
+                    <div class="cta-buttons">
+
+                        <a href="#" class="primary-btn">
+                            Start Free
+                        </a>
+
+                        <a href="#" class="secondary-btn">
+                            Learn More
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+                <!-- =========================
+             FAQ SECTION
+        ========================== -->
+
+        <section class="faq" id="faq">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-badge">
+                        Frequently Asked Questions
+                    </span>
+
+                    <h2>
+                        Got Questions?
+                    </h2>
+
+                    <p>
+                        Find answers to the most common questions about AL Resume Lab.
+                    </p>
+
+                </div>
+
+                <div class="faq-wrapper">
+
+                    <div class="faq-item active">
+
+                        <button class="faq-question">
+                            What is an ATS-friendly resume?
+                            <i class="ri-add-line"></i>
+                        </button>
+
+                        <div class="faq-answer">
+                            <p>
+                                An ATS-friendly resume is optimized for Applicant Tracking
+                                Systems so recruiters can easily scan and rank your resume.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+                            Is AL Resume Lab free?
+                            <i class="ri-add-line"></i>
+                        </button>
+
+                        <div class="faq-answer">
+                            <p>
+                                Yes. You can start with a free plan and upgrade whenever
+                                you need premium AI features.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+                            Can I download my resume as PDF?
+                            <i class="ri-add-line"></i>
+                        </button>
+
+                        <div class="faq-answer">
+                            <p>
+                                Yes, your resume can be exported as a professional PDF
+                                ready for job applications.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+                            Does AI improve my resume?
+                            <i class="ri-add-line"></i>
+                        </button>
+
+                        <div class="faq-answer">
+                            <p>
+                                Yes. AI analyzes your resume and suggests stronger wording,
+                                keywords, formatting improvements, and ATS optimization.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             CONTACT SECTION
+        ========================== -->
+
+        <section class="contact" id="contact">
+
+            <div class="container">
+
+                <div class="contact-box">
+
+                    <h2>Need Help?</h2>
+
+                    <p>
+                        Our support team is here to help you build a better resume.
+                    </p>
+
+                    <a href="mailto:support@alresumelab.com" class="primary-btn">
+                        Contact Support
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-column">
+
+                    <h3>AL Resume Lab</h3>
+
+                    <p>
+                        AI-powered Resume Builder & ATS Checker helping job seekers
+                        create professional resumes with confidence.
+                    </p>
+
+                </div>
+
+                <div class="footer-column">
+
+                    <h4>Product</h4>
+
+                    <ul>
+                        <li><a href="#resume">Resume Builder</a></li>
+                        <li><a href="#ats">ATS Checker</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="footer-column">
+
+                    <h4>Company</h4>
+
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="footer-column">
+
+                    <h4>Follow Us</h4>
+
+                    <div class="social-links">
+
+                        <a href="#"><i class="ri-facebook-fill"></i></a>
+                        <a href="#"><i class="ri-instagram-line"></i></a>
+                        <a href="#"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#"><i class="ri-twitter-x-line"></i></a>
+                        <a href="#"><i class="ri-github-fill"></i></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 AL Resume Lab. All Rights Reserved.
+                </p>
+
+            </div>
+
         </div>
-        <div class="faq-item">
-          <button class="faq-item__q">How is my ATS score calculated? <span>+</span></button>
-          <div class="faq-item__a"><p>We check keyword match against your target job description, formatting parseabilit
+
+    </footer>
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
