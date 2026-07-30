@@ -5,35 +5,65 @@ document.addEventListener('DOMContentLoaded', () => {
     const loaderText = document.getElementById('loader-text');
     const atsResult = document.getElementById('ats-result');
 
-    if (!dropZone || !cvFile) return;
+    // Login Modal Elements
+    const loginModal = document.getElementById('login-modal');
+    const navLoginBtn = document.getElementById('nav-login-btn');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+    const googleLoginTrigger = document.getElementById('google-login-trigger');
 
-    // Drag & Drop Functionality
-    dropZone.addEventListener('click', () => cvFile.click());
+    let isUserLoggedIn = false;
 
-    dropZone.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        dropZone.style.borderColor = '#06B6D4';
-    });
+    // Login Modal Triggers
+    if (navLoginBtn) {
+        navLoginBtn.addEventListener('click', () => {
+            loginModal.style.display = 'flex';
+        });
+    }
 
-    dropZone.addEventListener('dragleave', () => {
-        dropZone.style.borderColor = 'rgba(6, 182, 212, 0.4)';
-    });
+    if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', () => {
+            loginModal.style.display = 'none';
+        });
+    }
 
-    dropZone.addEventListener('drop', (e) => {
-        e.preventDefault();
-        if (e.dataTransfer.files.length) {
-            cvFile.files = e.dataTransfer.files;
-            processCV();
+    if (googleLoginTrigger) {
+        googleLoginTrigger.addEventListener('click', () => {
+            handleUserAuth();
+        });
+    }
+
+    // Drag & Drop Handling with Auth Guard
+    if (dropZone && cvFile) {
+        dropZone.addEventListener('click', () => {
+            if (!isUserLoggedIn) {
+                loginModal.style.display = 'flex';
+            } else {
+                cvFile.click();
+            }
+        });
+
+        cvFile.addEventListener('change', () => {
+            if (cvFile.files.length) {
+                if (!isUserLoggedIn) {
+                    loginModal.style.display = 'flex';
+                } else {
+                    processCV();
+                }
+            }
+        });
+    }
+
+    window.handleUserAuth = function() {
+        isUserLoggedIn = true;
+        loginModal.style.display = 'none';
+        if (navLoginBtn) {
+            navLoginBtn.textContent = '✅ Logged In';
+            navLoginBtn.style.borderColor = '#10b981';
         }
-    });
+        alert('Authentication successful! You can now scan your CV.');
+    };
 
-    cvFile.addEventListener('change', () => {
-        if (cvFile.files.length) {
-            processCV();
-        }
-    });
-
-    // Simulated AI Corporate ATS Scanner Engine
+    // Simulated AI ATS Scanner Process
     function processCV() {
         dropZone.style.display = 'none';
         loader.style.display = 'block';
@@ -62,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
         loader.style.display = 'none';
         atsResult.style.display = 'block';
 
-        // Generate Realistic Analysis Score (Range: 42% - 68%)
         const generatedScore = Math.floor(Math.random() * (68 - 42 + 1)) + 42; 
         
         const scoreNumber = document.getElementById('score-number');
