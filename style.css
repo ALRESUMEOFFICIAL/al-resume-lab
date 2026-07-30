@@ -527,4 +527,4 @@ ul {
     .form-grid { grid-template-columns: 1fr; }
     .form-group.full-width { grid-column: span 1; }
     .footer-container { grid-template-columns: 1fr; }
-}
+        }
