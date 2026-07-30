@@ -12,7 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
-    <!-- GEO / SEO Structured Data (JSON-LD for Google AI Overviews) -->
+    <!-- REAL CV PARSING LIBRARIES (PDF.js & Mammoth.js) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+
+    <!-- Official Google Sign-In SDK -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <!-- GEO / SEO Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -29,33 +36,12 @@
       }
     }
     </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "How to check ATS score of a resume?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "To check your ATS score, upload your PDF or DOCX resume to AL Resume Lab's AI scanner. The engine parses layout, keyword density, and section headings to generate an instant compatibility score."
-        }
-      }, {
-        "@type": "Question",
-        "name": "What is a good ATS resume score for corporate jobs?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A score of 80% to 90+ is considered optimal for passing corporate Applicant Tracking Systems (ATS) like Workday, Taleo, and Greenhouse."
-        }
-      }]
-    }
-    </script>
 </head>
 <body>
 
     <!-- Top Announcement Bar -->
     <div class="top-bar">
-        <span>⚡ Enterprise Grade AI ATS Scanner Active | Official Support: <strong>alresumehubofficial@gmail.com</strong></span>
+        <span>⚡ Enterprise Grade Real AI ATS Scanner Active | Official Support: <strong>alresumehubofficial@gmail.com</strong></span>
     </div>
 
     <!-- Responsive Header -->
@@ -66,6 +52,10 @@
                 <span class="logo-badge">PRO ATS</span>
             </div>
             <div class="nav-actions">
+                <div id="user-profile-badge" class="user-badge" style="display: none;">
+                    <img id="user-avatar" src="" alt="User Avatar">
+                    <span id="user-email-text"></span>
+                </div>
                 <button class="btn btn-outline" id="nav-login-btn">🔐 Login</button>
                 <a href="https://wa.me/923309871122?text=Hi%20Qureshi%20Designs,%20I%20want%20a%20professional%2090%2B%20ATS%20Score%20Resume" target="_blank" class="btn btn-whatsapp header-btn">
                     💬 Contact Designer
@@ -74,7 +64,7 @@
         </div>
     </header>
 
-    <!-- Ad Space Header (Google AdSense Ready) -->
+    <!-- Ad Space Header -->
     <div class="container ad-banner-slot">
         <div class="ad-placeholder">-- Google AdSense Banner Placement --</div>
     </div>
@@ -82,8 +72,8 @@
     <!-- Hero & ATS Checker Section -->
     <section class="hero">
         <div class="container">
-            <h1>Enterprise Grade <span class="gradient-text">AI ATS Scanner</span></h1>
-            <p>Upload your CV below. Our corporate-level parsing engine analyzes structure, keywords, and formatting to calculate your official ATS score.</p>
+            <h1>Enterprise Grade <span class="gradient-text">Real AI ATS Scanner</span></h1>
+            <p>Upload your CV below. Our corporate-level parsing engine analyzes actual text, keywords, and headers to calculate your real ATS score.</p>
 
             <!-- ATS Checker Interactive Card -->
             <div class="ats-card">
@@ -91,45 +81,45 @@
                     <span class="drop-zone-icon">📄</span>
                     <h3 style="margin-bottom: 8px;">Upload Your CV / Resume</h3>
                     <p style="color: var(--text-muted); font-size: 0.88rem;">Supports PDF, DOCX (Max Size: 5MB)</p>
-                    <input type="file" id="cv-file" class="file-input" accept=".pdf,.doc,.docx">
+                    <input type="file" id="cv-file" class="file-input" accept=".pdf,.docx">
                 </div>
 
                 <!-- Processing Loader -->
                 <div class="loader" id="loader">
                     <div class="spinner"></div>
-                    <p style="font-weight: 600;" id="loader-text">Analyzing CV Layout & Formatting...</p>
+                    <p style="font-weight: 600;" id="loader-text">Reading Document Text...</p>
                 </div>
 
-                <!-- Dynamic ATS Results -->
+                <!-- Dynamic Real ATS Results -->
                 <div class="ats-result" id="ats-result">
                     <div class="score-header">
                         <div>
-                            <h3 id="score-title">Overall ATS Compatibility Score</h3>
-                            <p style="color: var(--text-muted); font-size: 0.85rem;" id="score-status">Needs Improvement for Corporate Hiring</p>
+                            <h3 id="score-title">Real ATS Match Score</h3>
+                            <p style="color: var(--text-muted); font-size: 0.85rem;" id="score-status">Calculating...</p>
                         </div>
                         <div class="score-circle" id="score-circle-bg">
                             <div class="score-circle-inner" id="score-number">0%</div>
                         </div>
                     </div>
 
-                    <h4 style="margin-bottom: 15px;">ATS Technical Analysis Breakdown:</h4>
+                    <h4 style="margin-bottom: 15px;">ATS Real Text Analysis Breakdown:</h4>
                     <ul class="breakdown-list">
                         <li class="breakdown-item">
-                            <span>Format & Section Headers Parsability</span>
-                            <strong id="res-format" style="color: #ef4444;">Poor</strong>
+                            <span>Essential Headers Found (Experience, Education, Skills)</span>
+                            <strong id="res-headers" style="color: #ef4444;">0 Found</strong>
                         </li>
                         <li class="breakdown-item">
-                            <span>Industry Keywords Match</span>
-                            <strong id="res-keywords" style="color: #f59e0b;">Moderate</strong>
+                            <span>High-Value Keywords Match</span>
+                            <strong id="res-keywords" style="color: #f59e0b;">0% Match</strong>
                         </li>
                         <li class="breakdown-item">
-                            <span>Contact Info & Layout Readability</span>
-                            <strong id="res-layout" style="color: #10b981;">Passed</strong>
+                            <span>Contact Info & Email Detected</span>
+                            <strong id="res-contact" style="color: #ef4444;">Missing</strong>
                         </li>
                     </ul>
 
                     <div style="margin-top: 25px; text-align: center;">
-                        <a href="#custom-service" class="btn btn-primary" style="width: 100%;">
+                        <a href="https://wa.me/923309871122?text=Hello%20Qureshi%20Designs,%20My%20ATS%20score%20is%20low.%20I%20want%20to%20upgrade%20to%2090%2B%20ATS%20Score." target="_blank" class="btn btn-primary" style="width: 100%;">
                             🚀 Fix These Issues & Upgrade to 90+ Score
                         </a>
                     </div>
@@ -167,64 +157,29 @@
         </div>
     </section>
 
-    <!-- Ad Space Middle -->
-    <div class="container ad-banner-slot">
-        <div class="ad-placeholder">-- Google AdSense Content Banner --</div>
-    </div>
-
-    <!-- SEO / GEO High Ranking Article Section -->
+    <!-- SEO Article Section -->
     <section class="seo-article-section">
         <div class="container">
             <article class="article-content">
                 <h2>How to Check ATS Score of Your Resume Online</h2>
                 <p>An <strong>Applicant Tracking System (ATS)</strong> is automated hiring software used by enterprise companies to filter out job applications before a recruiter views them. If your resume lacks parsed headers, standard fonts, or industry keywords, it will be automatically rejected.</p>
-                
-                <h3>Step-by-Step Guide: How to Check ATS Score</h3>
-                <ol class="seo-list">
-                    <li><strong>Upload File:</strong> Select your latest CV in standard PDF or DOCX format.</li>
-                    <li><strong>AI Scanning Engine:</strong> Our parser simulates enterprise ATS software (Taleo, Workday, Greenhouse).</li>
-                    <li><strong>Review Breakdown:</strong> Get feedback on layout readability, format compatibility, and keyword matches.</li>
-                    <li><strong>Upgrade & Optimize:</strong> Convert your score to 90%+ using professional formatting.</li>
-                </ol>
-
-                <div class="faq-block">
-                    <h3>Frequently Asked Questions (FAQ)</h3>
-                    <div class="faq-item">
-                        <h4>What is a good ATS resume score?</h4>
-                        <p>A score of 80% or above means your resume has clean formatting and strong keyword matching to pass company filters.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h4>Why do ATS systems reject CVs?</h4>
-                        <p>Complex visual graphics, unreadable tables, missing key skills, and non-standard font structures cause major parsing errors.</p>
-                    </div>
-                </div>
             </article>
         </div>
     </section>
 
-    <!-- Login Modal (Mandatory for ATS System Check) -->
+    <!-- Gmail First-Time Mandatory Login Modal -->
     <div class="modal-overlay" id="login-modal">
         <div class="modal-card">
             <button class="modal-close" id="modal-close-btn">&times;</button>
-            <h3>Account Authorization</h3>
-            <p>Please log in or continue with Google to access the Enterprise AI ATS Scanner.</p>
-            
-            <button class="btn btn-google" id="google-login-trigger">
-                <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="Google Logo" width="18">
-                Continue with Google
-            </button>
-            
-            <div class="modal-divider">OR</div>
-            
-            <form id="login-form" onsubmit="event.preventDefault(); handleUserAuth();">
-                <input type="email" placeholder="Email Address" required class="modal-input">
-                <input type="password" placeholder="Password" required class="modal-input">
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In & Scan CV</button>
-            </form>
+            <h3>Sign in with Gmail</h3>
+            <p style="margin-bottom: 20px; font-size: 0.88rem; color: var(--text-muted);">
+                Sign in once with your Google account to access free unlimited ATS CV Scans.
+            </p>
+            <div id="google-btn-container" style="display: flex; justify-content: center; margin-bottom: 15px;"></div>
         </div>
     </div>
 
-    <!-- Footer (Mandatory Policies for AdSense & Trust) -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2026 AL RESUME LAB. All Rights Reserved. Contact: <strong>alresumehubofficial@gmail.com</strong></p>
