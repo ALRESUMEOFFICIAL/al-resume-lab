@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectAllCheckbox = document.getElementById('select-all');
     const rowCheckboxes = document.querySelectorAll('.row-select');
     const statusFilter = document.getElementById('status-filter');
-    const transactionsTable = document.getElementById('transactions-table');
     const tableBody = document.getElementById('table-body');
     const paginationInfo = document.getElementById('pagination-info');
 
